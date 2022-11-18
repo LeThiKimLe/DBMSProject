@@ -98,6 +98,8 @@ namespace Saving_Account_Management.BS_Layer
             db.comm.Parameters.Add("@diaChi", SqlDbType.NVarChar).Value = diaChi;
             db.comm.Parameters.Add("@imageFolderPath", SqlDbType.NVarChar).Value = image;
             return db.MyExecuteNonQuery(sqlString, CommandType.StoredProcedure, ref err);
+
+
            
         }
     }
