@@ -56,6 +56,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BS_Layer\BS_DSKhachHang.cs" />
+    <Compile Include="BS_Layer\BS_TK1L_GiaoDichTK.cs" />
     <Compile Include="CN_ThongTin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,6 +99,60 @@
     </Compile>
     <Compile Include="FormDangNhap.Designer.cs">
       <DependentUpon>FormDangNhap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormGiaoDich\FormGiaHan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormGiaoDich\FormGiaHan.Designer.cs">
+      <DependentUpon>FormGiaHan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormGiaoDich\FormGiaoDichLanDau.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormGiaoDich\FormGiaoDichLanDau.Designer.cs">
+      <DependentUpon>FormGiaoDichLanDau.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormGiaoDich\FormGuiGop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormGiaoDich\FormGuiGop.Designer.cs">
+      <DependentUpon>FormGuiGop.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormGiaoDich\FormRutLaiDinhKy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormGiaoDich\FormRutLaiDinhKy.Designer.cs">
+      <DependentUpon>FormRutLaiDinhKy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormGiaoDich\FormRutLaiSau.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormGiaoDich\FormRutLaiSau.Designer.cs">
+      <DependentUpon>FormRutLaiSau.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormGiaoDich\FormRutLaiTruoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormGiaoDich\FormRutLaiTruoc.Designer.cs">
+      <DependentUpon>FormRutLaiTruoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormGiaoDich\FormRutLaiTruocHan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormGiaoDich\FormRutLaiTruocHan.Designer.cs">
+      <DependentUpon>FormRutLaiTruocHan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormGiaoDich\FormTatToanDungHan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormGiaoDich\FormTatToanDungHan.Designer.cs">
+      <DependentUpon>FormTatToanDungHan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormGiaoDich\FormTatToanTruocHan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormGiaoDich\FormTatToanTruocHan.Designer.cs">
+      <DependentUpon>FormTatToanTruocHan.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -223,6 +278,33 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormDangNhap.resx">
       <DependentUpon>FormDangNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormGiaoDich\FormGiaHan.resx">
+      <DependentUpon>FormGiaHan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormGiaoDich\FormGiaoDichLanDau.resx">
+      <DependentUpon>FormGiaoDichLanDau.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormGiaoDich\FormGuiGop.resx">
+      <DependentUpon>FormGuiGop.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormGiaoDich\FormRutLaiDinhKy.resx">
+      <DependentUpon>FormRutLaiDinhKy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormGiaoDich\FormRutLaiSau.resx">
+      <DependentUpon>FormRutLaiSau.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormGiaoDich\FormRutLaiTruoc.resx">
+      <DependentUpon>FormRutLaiTruoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormGiaoDich\FormRutLaiTruocHan.resx">
+      <DependentUpon>FormRutLaiTruocHan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormGiaoDich\FormTatToanDungHan.resx">
+      <DependentUpon>FormTatToanDungHan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormGiaoDich\FormTatToanTruocHan.resx">
+      <DependentUpon>FormTatToanTruocHan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
