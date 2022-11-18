@@ -13,17 +13,17 @@ using System.Data.SqlClient;
 using Saving_Account_Management.DB_Layer;
 using Saving_Account_Management.Setting;
 
+
 namespace Saving_Account_Management
 {
     public partial class FormDangNhap : Form
     {
         private BS_FromDangNhap act = new BS_FromDangNhap();
         public string UserLogin = "";
+        DB_Connect db = null;
         public FormDangNhap()
         {
             InitializeComponent();
-        /*   tbUserName.Text = "LTKLe";
-            tbPassWord.Text = "SEp9Y4";*/
         }
 
         private void but_Thoat_Click(object sender, EventArgs e)
@@ -33,7 +33,6 @@ namespace Saving_Account_Management
             {
                 this.Close();
             }
-            
         }
 
         private void btnSignIn_Click(object sender, EventArgs e)
@@ -45,6 +44,7 @@ namespace Saving_Account_Management
         }
          private void DangNhap()
         {
+            string maNhanVien = null;
             if(tbUserName.Text == null || tbUserName.Text == ""|| tbPassWord.Text == null|| tbPassWord.Text == ""  )
             {
                 MessageBox.Show("Vui lòng nhập đầy đủ thông tin");
@@ -53,24 +53,22 @@ namespace Saving_Account_Management
 
             else
             {
-                if (act.KiemTraDangNhap(tbUserName.Text,tbPassWord.Text) == true)
+                try
                 {
-
-                    //MessageBox.Show("Đăng nhập thành công ");
+                    db = new DB_Connect(tbUserName.Text, tbPassWord.Text);
+                    AppSettingSingleton.getSetting().CurrentTenDangNhap = tbUserName.Text;
+                    AppSettingSingleton.getSetting().SQLConnection = db;
+                    maNhanVien = act.KiemTraDangNhap(tbUserName.Text, tbPassWord.Text);
+                    AppSettingSingleton.getSetting().CurrentMaNhanVien = maNhanVien;
                     this.Hide();
-                    AppSettingSingleton.getSetting().CurrentLoginedUsername = tbUserName.Text;
                     Form1 frm = new Form1();
                     frm.ShowDialog();
                 }
-                
-                else
+                catch (SqlException e)
                 {
-                    MessageBox.Show("Tên đăng nhập hoặc mật khẩu sai !! ");
+                    MessageBox.Show(e.Message,"Lỗi");
                 }
-                //tbUserName.DataSource = act.KiemTraDangNhap(tbUserName.Text);
-                
             }
-
         }
 
         private void tbUserName_KeyPress(object sender, KeyPressEventArgs e)

@@ -1,4 +1,5 @@
 ﻿using Saving_Account_Management.DB_Layer;
+using Saving_Account_Management.Setting;
 using System;
 using System.CodeDom.Compiler;
 using System.Collections.Generic;
@@ -16,12 +17,11 @@ namespace Saving_Account_Management.BS_Layer
         DB_Connect db = null;
         public BS_FromDangNhap()
         {
-            db = new DB_Connect();
-            
         }
 
-        public bool KiemTraDangNhap(string text1, string text2)
+        public string KiemTraDangNhap(string text1, string text2)
         {
+            db = AppSettingSingleton.getSetting().SQLConnection;
             db.new_comm();
             DataSet temp = new DataSet();
             bool f = false;
@@ -29,9 +29,9 @@ namespace Saving_Account_Management.BS_Layer
             temp = db.ExecuteQueryDataSet(SqlString, CommandType.Text);
             if (temp.Tables[0].Rows.Count > 0)
             {
-                f = true;
+                return temp.Tables[0].Rows[0]["MaNhanVien"].ToString();
             }
-            return f;
+            return null;
         }
         public string KiemTraQuyen(string text)
         {

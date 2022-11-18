@@ -15,7 +15,7 @@ namespace Saving_Account_Management.BS_Layer
         DB_Connect db = null;
         public BS_DanhMuc()
         {
-            db = new DB_Connect();
+            db = AppSettingSingleton.getSetting().SQLConnection;
         }
         public DataSet LayDanhSachChiNhanh()
         {
@@ -48,22 +48,12 @@ namespace Saving_Account_Management.BS_Layer
             DataSet temp = db.ExecuteQueryDataSet(sqlString, CommandType.Text);
             return (temp.Tables[0]);
         }
-        public DataSet LayMaNhanVien()
-        {
-
-            db.new_comm();
-            var userName = AppSettingSingleton.getSetting().CurrentLoginedUsername;
-
-            string sql = "SELECT * FROM LayMaNhanVien('"+ userName +"')";
-            
-
-            return db.ExecuteQueryDataSet(sql, CommandType.Text);
-        }
+       
         public DataSet LayHoTen()
         {
             db.new_comm();
-            var MaNV = AppSettingSingleton.getSetting().CurrentUserName;
-            var userName = AppSettingSingleton.getSetting().CurrentLoginedUsername;
+            var MaNV = AppSettingSingleton.getSetting().CurrentMaNhanVien;
+            var userName = AppSettingSingleton.getSetting().CurrentTenDangNhap;
             string sql = " select * From LayHoTen('" + userName + "','" + MaNV + "')";
 
             return db.ExecuteQueryDataSet(sql, CommandType.Text);
@@ -71,8 +61,8 @@ namespace Saving_Account_Management.BS_Layer
         public DataSet LayNgaySinh()
         {
             db.new_comm();
-            var MaNV = AppSettingSingleton.getSetting().CurrentUserName;
-            var userName = AppSettingSingleton.getSetting().CurrentLoginedUsername;
+            var MaNV = AppSettingSingleton.getSetting().CurrentMaNhanVien;
+            var userName = AppSettingSingleton.getSetting().CurrentTenDangNhap;
             string sql = " select * From LayNgaySinh('" + userName + "','" + MaNV + "')";
 
             return db.ExecuteQueryDataSet(sql, CommandType.Text);
@@ -80,8 +70,8 @@ namespace Saving_Account_Management.BS_Layer
         public DataSet LayMaDinhDanh()
         {
             db.new_comm();
-            var MaNV = AppSettingSingleton.getSetting().CurrentUserName;
-            var userName = AppSettingSingleton.getSetting().CurrentLoginedUsername;
+            var MaNV = AppSettingSingleton.getSetting().CurrentMaNhanVien;
+            var userName = AppSettingSingleton.getSetting().CurrentTenDangNhap;
             string sql = " select * From LayMaDinhDanh('" + userName + "','" + MaNV + "')";
 
             return db.ExecuteQueryDataSet(sql, CommandType.Text);
@@ -89,8 +79,8 @@ namespace Saving_Account_Management.BS_Layer
         public DataSet LaySDT()
         {
             db.new_comm();
-            var MaNV = AppSettingSingleton.getSetting().CurrentUserName;
-            var userName = AppSettingSingleton.getSetting().CurrentLoginedUsername;
+            var MaNV = AppSettingSingleton.getSetting().CurrentMaNhanVien;
+            var userName = AppSettingSingleton.getSetting().CurrentTenDangNhap;
             string sql = " select * From LaySDT('" + userName + "','" + MaNV + "')";
 
             return db.ExecuteQueryDataSet(sql, CommandType.Text);
@@ -98,10 +88,18 @@ namespace Saving_Account_Management.BS_Layer
         public DataSet LayChiNhanh()
         {
             db.new_comm();
-            var MaNV = AppSettingSingleton.getSetting().CurrentUserName;
-            var userName = AppSettingSingleton.getSetting().CurrentLoginedUsername;
+            var MaNV = AppSettingSingleton.getSetting().CurrentMaNhanVien;
+            var userName = AppSettingSingleton.getSetting().CurrentTenDangNhap;
             string sql = " select * From LayChiNhanh('" + userName + "','" + MaNV + "')";
 
+            return db.ExecuteQueryDataSet(sql, CommandType.Text);
+        }
+
+        public DataSet LayChucVu(string maNhanVien)
+        {
+            db.new_comm();
+            string sql = "select * From LayChucVu(@MaNhanVien)";
+            db.comm.Parameters.AddWithValue("@MaNhanVien", maNhanVien);
             return db.ExecuteQueryDataSet(sql, CommandType.Text);
         }
 

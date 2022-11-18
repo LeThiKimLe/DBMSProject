@@ -11,7 +11,14 @@ namespace Saving_Account_Management.DB_Layer
         string connectString;
         public DB_Connect()
         {
-            connectString = "Data Source=tcp:DESKTOP-SH243I1;Initial Catalog=QUANLYTAIKHOANTIETKIEM;User ID=sa;Password=123456";
+            //connectString = "Data Source=tcp:DESKTOP-SH243I1;Initial Catalog=QUANLYTAIKHOANTIETKIEM;User ID=sa;Password=123456";
+            //link = new SqlConnection(connectString);
+            //comm = link.CreateCommand();
+        }
+
+        public DB_Connect(string username, string password)
+        {
+            connectString = "Data Source=tcp:DESKTOP-SH243I1;Initial Catalog=QUANLYSOTIETKIEMNGANHANG;User ID=" + username+";Password="+password;
             link = new SqlConnection(connectString);
             comm = link.CreateCommand();
         }

@@ -308,16 +308,12 @@ namespace Saving_Account_Management
 
         private void radioButton_khongkyhan_CheckedChanged(object sender, EventArgs e)
         {
-
             if (radioButton_khongkyhan.Checked )
                 groupBox_khongkyhan.Visible = true;
             else
                 groupBox_khongkyhan.Visible = false;
         }
       
-        
-       
-
         void HienKyTraLai()
         {          
             mangint = timuoc(int.Parse(comboBox_kyhan.Text));
@@ -328,6 +324,8 @@ namespace Saving_Account_Management
             comboBox_hinhthuctralai.DisplayMember = "TenHinhThucTraLai";
             dt = new DataTable();
             dt.Clear();
+            if (comboBox_hinhthuctralai.SelectedValue.ToString() == "System.Data.DataRowView")
+                return;
             DataSet dts = bl.get_LaiSuat("HTG_1L", comboBox_hinhthuctralai.SelectedValue.ToString(),int.Parse(comboBox_kyhan.Text));
             dt = dts.Tables[0];
             label_hienlaisuat.Text = dt.Rows[0][0].ToString()+" %";
@@ -348,8 +346,6 @@ namespace Saving_Account_Management
                 comboBox_kytralai.Enabled = false;
 
             }
-           
-
         }
 
         private void pictureBox_chuky_MouseClick(object sender, MouseEventArgs e)

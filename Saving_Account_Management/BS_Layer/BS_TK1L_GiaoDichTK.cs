@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Data;
 using System.Windows.Forms;
-
 using Saving_Account_Management.DB_Layer;
+using Saving_Account_Management.Setting;
 
 namespace Saving_Account_Management.BS_Layer
 {
@@ -17,7 +17,7 @@ namespace Saving_Account_Management.BS_Layer
         DB_Connect db = null;
         public BS_TK1L_GiaoDichTK()
         {
-            db = new DB_Connect();
+            db = AppSettingSingleton.getSetting().SQLConnection;
         }
 
         public DataSet get_DS_So(string MaDinhDanh)

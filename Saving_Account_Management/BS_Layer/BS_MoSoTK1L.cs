@@ -7,6 +7,7 @@ using System.Data;
 using System.Windows.Forms;
 using System.IO;
 using Saving_Account_Management.DB_Layer;
+using Saving_Account_Management.Setting;
 using System.Data.SqlClient;
 
 namespace Saving_Account_Management.BS_Layer
@@ -17,7 +18,7 @@ namespace Saving_Account_Management.BS_Layer
         DB_Connect db = null;
         public BS_MoSoTK1L()
         {
-            db = new DB_Connect();
+            db = AppSettingSingleton.getSetting().SQLConnection;
         }
         public DataSet LaySoTheoMaDinhDanh(string MaDinhDanh)
         {

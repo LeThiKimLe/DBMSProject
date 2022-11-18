@@ -1,6 +1,7 @@
 ﻿using System.Data.SqlClient;
 using System.Data;
 using Saving_Account_Management.DB_Layer;
+using Saving_Account_Management.Setting;
 
 namespace Saving_Account_Management.BS_Layer
 {
@@ -10,7 +11,7 @@ namespace Saving_Account_Management.BS_Layer
         string err;
         public BS_DSKhachHang()
         {
-            db = new DB_Connect();
+            db = AppSettingSingleton.getSetting().SQLConnection;
         }
         
         public DataSet LayDanhSachKhachHang()

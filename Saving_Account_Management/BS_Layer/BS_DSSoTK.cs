@@ -1,4 +1,5 @@
 ﻿using Saving_Account_Management.DB_Layer;
+using Saving_Account_Management.Setting;
 using System;
 using System.Data;
 using System.Data.SqlClient;
@@ -12,7 +13,7 @@ namespace Saving_Account_Management.BS_Layer
 
         public BS_DSSoTK()
         {
-            db = new DB_Connect();
+            db = db = AppSettingSingleton.getSetting().SQLConnection;
         }
 
         public DataSet LayDanhSachSoTK()
