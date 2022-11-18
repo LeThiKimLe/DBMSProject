@@ -43,8 +43,5 @@ namespace Saving_Account_Management.BS_Layer
             string quyen = temp.Tables[0].Rows[0][0].ToString();
             return quyen;
         }
-
-       
-
     }
 }

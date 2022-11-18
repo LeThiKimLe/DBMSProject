@@ -58,12 +58,10 @@
     <Compile Include="BS_Layer\BS_DanhMuc.cs" />
     <Compile Include="BS_Layer\BS_DSKhachHang.cs" />
     <Compile Include="BS_Layer\BS_TK1L_GiaoDichTK.cs" />
-    <Compile Include="CN_ThongTin.cs">
-	<Compile Include="BS_Layer\BS_DSNhanVien.cs" />
-	<Compile Include="BS_Layer\BS_MoSoTK1L.cs" />
-	<Compile Include="BS_FromDangNhap.cs">
+    <Compile Include="BS_Layer\BS_DSNhanVien.cs" />
+    <Compile Include="BS_Layer\BS_MoSoTK1L.cs" />
     <Compile Include="BS_Layer\BS_MoSoTKGG.cs" />
-	<Compile Include="CN_ThongTin.cs">
+    <Compile Include="CN_ThongTin.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="CN_ThongTin.Designer.cs">
