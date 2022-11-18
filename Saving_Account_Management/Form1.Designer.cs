@@ -80,6 +80,8 @@ namespace Saving_Account_Management
             this.panel4 = new System.Windows.Forms.Panel();
             this.button7 = new System.Windows.Forms.Button();
             this.btn_CNThongTin = new System.Windows.Forms.Button();
+
+            this.btn_Logout = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage4.SuspendLayout();
             this.panel7.SuspendLayout();
@@ -900,6 +902,7 @@ namespace Saving_Account_Management
             // 
             this.panel3.BackColor = System.Drawing.Color.Transparent;
             this.panel3.BackgroundImage = global::Saving_Account_Management.Properties.Resources.color1;
+            this.panel3.Controls.Add(this.btn_Logout);
             this.panel3.Controls.Add(this.panel4);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(3, 2);
@@ -958,6 +961,19 @@ namespace Saving_Account_Management
             this.btn_CNThongTin.UseVisualStyleBackColor = true;
             this.btn_CNThongTin.Click += new System.EventHandler(this.btn_CNThongTin_Click);
             // 
+
+            // btn_Logout
+            // 
+            this.btn_Logout.BackColor = System.Drawing.Color.Teal;
+            this.btn_Logout.Location = new System.Drawing.Point(880, 92);
+            this.btn_Logout.Name = "btn_Logout";
+            this.btn_Logout.Size = new System.Drawing.Size(98, 32);
+            this.btn_Logout.TabIndex = 2;
+            this.btn_Logout.Text = "Đăng xuất";
+            this.btn_Logout.UseVisualStyleBackColor = false;
+            this.btn_Logout.Click += new System.EventHandler(this.btn_Logout_Click);
+            // 
+
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1045,7 +1061,8 @@ namespace Saving_Account_Management
         private System.Windows.Forms.Panel task_screen2;
         private System.Windows.Forms.Panel task_screen3;
         private System.Windows.Forms.Panel task_screen4;
-        
+        private System.Windows.Forms.Button btn_Logout;
+
     }
 }
 

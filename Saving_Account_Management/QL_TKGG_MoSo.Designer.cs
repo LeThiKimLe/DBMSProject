@@ -30,22 +30,30 @@ namespace Saving_Account_Management
         private void InitializeComponent()
         {
             this.gb_TKGG_MoSo = new System.Windows.Forms.GroupBox();
+            this.button_moso = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.panel_thongtinsotietkiem = new System.Windows.Forms.Panel();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label_sotiengui = new System.Windows.Forms.Label();
-            this.textBox_ngaymoso = new System.Windows.Forms.TextBox();
-            this.label_ngaymoso = new System.Windows.Forms.Label();
-            this.label_hienthichinhanh = new System.Windows.Forms.Label();
-            this.label_chinhanh = new System.Windows.Forms.Label();
-            this.textBox_masotietkiem = new System.Windows.Forms.TextBox();
+            this.comboBox_hanguigop = new System.Windows.Forms.ComboBox();
             this.textBox_laisuatcokyhan = new System.Windows.Forms.TextBox();
             this.comboBox_loaitien = new System.Windows.Forms.ComboBox();
+            this.textBox_sotiengui = new System.Windows.Forms.TextBox();
             this.label_loaitien = new System.Windows.Forms.Label();
-            this.comboBox_kyhan = new System.Windows.Forms.ComboBox();
-            this.label_HTtralai = new System.Windows.Forms.Label();
+            this.label_sotiengui = new System.Windows.Forms.Label();
+            this.textBox_ngayGGtieptheo = new System.Windows.Forms.TextBox();
+            this.textBox_ngaymoso = new System.Windows.Forms.TextBox();
+            this.label_ngaymoso = new System.Windows.Forms.Label();
             this.label_laisuat = new System.Windows.Forms.Label();
+            this.comboBox_kyhan = new System.Windows.Forms.ComboBox();
+            this.label_hienthichinhanh = new System.Windows.Forms.Label();
+            this.label_hanguigop = new System.Windows.Forms.Label();
+            this.label_ngayGGTiepTheo = new System.Windows.Forms.Label();
+            this.label_ngaydenhan = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.label_chinhanh = new System.Windows.Forms.Label();
+            this.label_HTtralai = new System.Windows.Forms.Label();
+            this.textBox_ngaydenhang = new System.Windows.Forms.TextBox();
+            this.textBox_hinhthuctralai = new System.Windows.Forms.TextBox();
+            this.textBox_masotietkiem = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.panel_ThongTinKH = new System.Windows.Forms.Panel();
             this.label_dangsudung = new System.Windows.Forms.Label();
@@ -64,7 +72,7 @@ namespace Saving_Account_Management
             this.textBox_madinhdanh = new System.Windows.Forms.TextBox();
             this.textBox_noicap = new System.Windows.Forms.TextBox();
             this.textBox_sdt = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox_hoten = new System.Windows.Forms.TextBox();
             this.label_hoten = new System.Windows.Forms.Label();
             this.textBox_MaKH = new System.Windows.Forms.TextBox();
             this.label_MaKH = new System.Windows.Forms.Label();
@@ -72,14 +80,8 @@ namespace Saving_Account_Management
             this.button_timkiem = new System.Windows.Forms.Button();
             this.label_madinhdanh = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label_hanguigop = new System.Windows.Forms.Label();
-            this.textBox_hanguigop = new System.Windows.Forms.TextBox();
-            this.label_ngayGGTiepTheo = new System.Windows.Forms.Label();
-            this.textBox_ngayGGtieptheo = new System.Windows.Forms.TextBox();
-            this.textBox_hinhthuctralai = new System.Windows.Forms.TextBox();
-            this.label_ngaydenhan = new System.Windows.Forms.Label();
-            this.textBox_ngaydenhang = new System.Windows.Forms.TextBox();
-            this.button_moso = new System.Windows.Forms.Button();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.button1 = new System.Windows.Forms.Button();
             this.gb_TKGG_MoSo.SuspendLayout();
             this.panel_thongtinsotietkiem.SuspendLayout();
             this.panel_ThongTinKH.SuspendLayout();
@@ -88,6 +90,7 @@ namespace Saving_Account_Management
             // 
             // gb_TKGG_MoSo
             // 
+            this.gb_TKGG_MoSo.Controls.Add(this.button1);
             this.gb_TKGG_MoSo.Controls.Add(this.button_moso);
             this.gb_TKGG_MoSo.Controls.Add(this.label4);
             this.gb_TKGG_MoSo.Controls.Add(this.panel_thongtinsotietkiem);
@@ -103,6 +106,19 @@ namespace Saving_Account_Management
             this.gb_TKGG_MoSo.TabIndex = 2;
             this.gb_TKGG_MoSo.TabStop = false;
             this.gb_TKGG_MoSo.Text = "Mở sổ Tiết kiệm gửi góp";
+            this.gb_TKGG_MoSo.Enter += new System.EventHandler(this.gb_TKGG_MoSo_Enter);
+            // 
+            // button_moso
+            // 
+            this.button_moso.BackColor = System.Drawing.Color.Aqua;
+            this.button_moso.ForeColor = System.Drawing.Color.Red;
+            this.button_moso.Location = new System.Drawing.Point(1668, 672);
+            this.button_moso.Name = "button_moso";
+            this.button_moso.Size = new System.Drawing.Size(174, 54);
+            this.button_moso.TabIndex = 17;
+            this.button_moso.Text = "Mở Sổ";
+            this.button_moso.UseVisualStyleBackColor = false;
+            this.button_moso.Click += new System.EventHandler(this.button_moso_Click);
             // 
             // label4
             // 
@@ -117,13 +133,13 @@ namespace Saving_Account_Management
             // 
             // panel_thongtinsotietkiem
             // 
-            this.panel_thongtinsotietkiem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.panel_thongtinsotietkiem.BackColor = System.Drawing.Color.Gainsboro;
+            this.panel_thongtinsotietkiem.Controls.Add(this.comboBox_hanguigop);
             this.panel_thongtinsotietkiem.Controls.Add(this.textBox_laisuatcokyhan);
             this.panel_thongtinsotietkiem.Controls.Add(this.comboBox_loaitien);
-            this.panel_thongtinsotietkiem.Controls.Add(this.textBox3);
+            this.panel_thongtinsotietkiem.Controls.Add(this.textBox_sotiengui);
             this.panel_thongtinsotietkiem.Controls.Add(this.label_loaitien);
             this.panel_thongtinsotietkiem.Controls.Add(this.label_sotiengui);
-            this.panel_thongtinsotietkiem.Controls.Add(this.textBox_hanguigop);
             this.panel_thongtinsotietkiem.Controls.Add(this.textBox_ngayGGtieptheo);
             this.panel_thongtinsotietkiem.Controls.Add(this.textBox_ngaymoso);
             this.panel_thongtinsotietkiem.Controls.Add(this.label_ngaymoso);
@@ -147,12 +163,44 @@ namespace Saving_Account_Management
             this.panel_thongtinsotietkiem.Size = new System.Drawing.Size(724, 575);
             this.panel_thongtinsotietkiem.TabIndex = 15;
             // 
-            // textBox3
+            // comboBox_hanguigop
             // 
-            this.textBox3.Location = new System.Drawing.Point(236, 454);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(367, 30);
-            this.textBox3.TabIndex = 10;
+            this.comboBox_hanguigop.FormattingEnabled = true;
+            this.comboBox_hanguigop.Location = new System.Drawing.Point(509, 217);
+            this.comboBox_hanguigop.Name = "comboBox_hanguigop";
+            this.comboBox_hanguigop.Size = new System.Drawing.Size(121, 33);
+            this.comboBox_hanguigop.TabIndex = 11;
+            // 
+            // textBox_laisuatcokyhan
+            // 
+            this.textBox_laisuatcokyhan.Location = new System.Drawing.Point(235, 397);
+            this.textBox_laisuatcokyhan.Name = "textBox_laisuatcokyhan";
+            this.textBox_laisuatcokyhan.Size = new System.Drawing.Size(367, 30);
+            this.textBox_laisuatcokyhan.TabIndex = 3;
+            // 
+            // comboBox_loaitien
+            // 
+            this.comboBox_loaitien.FormattingEnabled = true;
+            this.comboBox_loaitien.Location = new System.Drawing.Point(236, 506);
+            this.comboBox_loaitien.Name = "comboBox_loaitien";
+            this.comboBox_loaitien.Size = new System.Drawing.Size(367, 33);
+            this.comboBox_loaitien.TabIndex = 7;
+            // 
+            // textBox_sotiengui
+            // 
+            this.textBox_sotiengui.Location = new System.Drawing.Point(236, 454);
+            this.textBox_sotiengui.Name = "textBox_sotiengui";
+            this.textBox_sotiengui.Size = new System.Drawing.Size(367, 30);
+            this.textBox_sotiengui.TabIndex = 10;
+            // 
+            // label_loaitien
+            // 
+            this.label_loaitien.AutoSize = true;
+            this.label_loaitien.Location = new System.Drawing.Point(62, 506);
+            this.label_loaitien.Name = "label_loaitien";
+            this.label_loaitien.Size = new System.Drawing.Size(93, 25);
+            this.label_loaitien.TabIndex = 6;
+            this.label_loaitien.Text = "Loại Tiền";
             // 
             // label_sotiengui
             // 
@@ -162,6 +210,13 @@ namespace Saving_Account_Management
             this.label_sotiengui.Size = new System.Drawing.Size(112, 25);
             this.label_sotiengui.TabIndex = 9;
             this.label_sotiengui.Text = "Số Tiền gửi";
+            // 
+            // textBox_ngayGGtieptheo
+            // 
+            this.textBox_ngayGGtieptheo.Location = new System.Drawing.Point(292, 339);
+            this.textBox_ngayGGtieptheo.Name = "textBox_ngayGGtieptheo";
+            this.textBox_ngayGGtieptheo.Size = new System.Drawing.Size(299, 30);
+            this.textBox_ngayGGtieptheo.TabIndex = 8;
             // 
             // textBox_ngaymoso
             // 
@@ -179,6 +234,24 @@ namespace Saving_Account_Management
             this.label_ngaymoso.TabIndex = 7;
             this.label_ngaymoso.Text = "Ngày Mở Sổ";
             // 
+            // label_laisuat
+            // 
+            this.label_laisuat.AutoSize = true;
+            this.label_laisuat.Location = new System.Drawing.Point(62, 397);
+            this.label_laisuat.Name = "label_laisuat";
+            this.label_laisuat.Size = new System.Drawing.Size(84, 25);
+            this.label_laisuat.TabIndex = 0;
+            this.label_laisuat.Text = "Lãi Suất";
+            // 
+            // comboBox_kyhan
+            // 
+            this.comboBox_kyhan.FormattingEnabled = true;
+            this.comboBox_kyhan.Location = new System.Drawing.Point(213, 217);
+            this.comboBox_kyhan.Name = "comboBox_kyhan";
+            this.comboBox_kyhan.Size = new System.Drawing.Size(126, 33);
+            this.comboBox_kyhan.TabIndex = 5;
+            this.comboBox_kyhan.SelectedValueChanged += new System.EventHandler(this.comboBox_kyhan_SelectedValueChanged);
+            // 
             // label_hienthichinhanh
             // 
             this.label_hienthichinhanh.AutoSize = true;
@@ -187,6 +260,42 @@ namespace Saving_Account_Management
             this.label_hienthichinhanh.Size = new System.Drawing.Size(64, 25);
             this.label_hienthichinhanh.TabIndex = 6;
             this.label_hienthichinhanh.Text = "label8";
+            // 
+            // label_hanguigop
+            // 
+            this.label_hanguigop.AutoSize = true;
+            this.label_hanguigop.Location = new System.Drawing.Point(377, 225);
+            this.label_hanguigop.Name = "label_hanguigop";
+            this.label_hanguigop.Size = new System.Drawing.Size(125, 25);
+            this.label_hanguigop.TabIndex = 0;
+            this.label_hanguigop.Text = "Hạn Gửi Góp";
+            // 
+            // label_ngayGGTiepTheo
+            // 
+            this.label_ngayGGTiepTheo.AutoSize = true;
+            this.label_ngayGGTiepTheo.Location = new System.Drawing.Point(50, 339);
+            this.label_ngayGGTiepTheo.Name = "label_ngayGGTiepTheo";
+            this.label_ngayGGTiepTheo.Size = new System.Drawing.Size(230, 25);
+            this.label_ngayGGTiepTheo.TabIndex = 0;
+            this.label_ngayGGTiepTheo.Text = "Ngày Gửi Góp Tiếp Theo";
+            // 
+            // label_ngaydenhan
+            // 
+            this.label_ngaydenhan.AutoSize = true;
+            this.label_ngaydenhan.Location = new System.Drawing.Point(50, 283);
+            this.label_ngaydenhan.Name = "label_ngaydenhan";
+            this.label_ngaydenhan.Size = new System.Drawing.Size(140, 25);
+            this.label_ngaydenhan.TabIndex = 0;
+            this.label_ngaydenhan.Text = "Ngày Đến Hạn";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(50, 217);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(77, 25);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "Kỳ Hạn";
             // 
             // label_chinhanh
             // 
@@ -197,45 +306,6 @@ namespace Saving_Account_Management
             this.label_chinhanh.TabIndex = 5;
             this.label_chinhanh.Text = "Chi Nhánh";
             // 
-            // textBox_masotietkiem
-            // 
-            this.textBox_masotietkiem.Location = new System.Drawing.Point(224, 45);
-            this.textBox_masotietkiem.Name = "textBox_masotietkiem";
-            this.textBox_masotietkiem.Size = new System.Drawing.Size(367, 30);
-            this.textBox_masotietkiem.TabIndex = 4;
-            // 
-            // textBox_laisuatcokyhan
-            // 
-            this.textBox_laisuatcokyhan.Location = new System.Drawing.Point(235, 397);
-            this.textBox_laisuatcokyhan.Name = "textBox_laisuatcokyhan";
-            this.textBox_laisuatcokyhan.Size = new System.Drawing.Size(367, 30);
-            this.textBox_laisuatcokyhan.TabIndex = 3;
-            // 
-            // comboBox_loaitien
-            // 
-            this.comboBox_loaitien.FormattingEnabled = true;
-            this.comboBox_loaitien.Location = new System.Drawing.Point(236, 506);
-            this.comboBox_loaitien.Name = "comboBox_loaitien";
-            this.comboBox_loaitien.Size = new System.Drawing.Size(367, 33);
-            this.comboBox_loaitien.TabIndex = 7;
-            // 
-            // label_loaitien
-            // 
-            this.label_loaitien.AutoSize = true;
-            this.label_loaitien.Location = new System.Drawing.Point(62, 506);
-            this.label_loaitien.Name = "label_loaitien";
-            this.label_loaitien.Size = new System.Drawing.Size(93, 25);
-            this.label_loaitien.TabIndex = 6;
-            this.label_loaitien.Text = "Loại Tiền";
-            // 
-            // comboBox_kyhan
-            // 
-            this.comboBox_kyhan.FormattingEnabled = true;
-            this.comboBox_kyhan.Location = new System.Drawing.Point(213, 217);
-            this.comboBox_kyhan.Name = "comboBox_kyhan";
-            this.comboBox_kyhan.Size = new System.Drawing.Size(126, 33);
-            this.comboBox_kyhan.TabIndex = 5;
-            // 
             // label_HTtralai
             // 
             this.label_HTtralai.AutoSize = true;
@@ -245,23 +315,26 @@ namespace Saving_Account_Management
             this.label_HTtralai.TabIndex = 4;
             this.label_HTtralai.Text = "Hình Thức Trả Lãi";
             // 
-            // label_laisuat
+            // textBox_ngaydenhang
             // 
-            this.label_laisuat.AutoSize = true;
-            this.label_laisuat.Location = new System.Drawing.Point(62, 397);
-            this.label_laisuat.Name = "label_laisuat";
-            this.label_laisuat.Size = new System.Drawing.Size(84, 25);
-            this.label_laisuat.TabIndex = 0;
-            this.label_laisuat.Text = "Lãi Suất";
+            this.textBox_ngaydenhang.Location = new System.Drawing.Point(235, 280);
+            this.textBox_ngaydenhang.Name = "textBox_ngaydenhang";
+            this.textBox_ngaydenhang.Size = new System.Drawing.Size(367, 30);
+            this.textBox_ngaydenhang.TabIndex = 4;
             // 
-            // label5
+            // textBox_hinhthuctralai
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(50, 217);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(77, 25);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "Kỳ Hạn";
+            this.textBox_hinhthuctralai.Location = new System.Drawing.Point(235, 147);
+            this.textBox_hinhthuctralai.Name = "textBox_hinhthuctralai";
+            this.textBox_hinhthuctralai.Size = new System.Drawing.Size(367, 30);
+            this.textBox_hinhthuctralai.TabIndex = 4;
+            // 
+            // textBox_masotietkiem
+            // 
+            this.textBox_masotietkiem.Location = new System.Drawing.Point(224, 45);
+            this.textBox_masotietkiem.Name = "textBox_masotietkiem";
+            this.textBox_masotietkiem.Size = new System.Drawing.Size(367, 30);
+            this.textBox_masotietkiem.TabIndex = 4;
             // 
             // label7
             // 
@@ -274,7 +347,7 @@ namespace Saving_Account_Management
             // 
             // panel_ThongTinKH
             // 
-            this.panel_ThongTinKH.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.panel_ThongTinKH.BackColor = System.Drawing.Color.Gainsboro;
             this.panel_ThongTinKH.Controls.Add(this.label_dangsudung);
             this.panel_ThongTinKH.Controls.Add(this.pictureBox_chuky);
             this.panel_ThongTinKH.Controls.Add(this.label_chuky);
@@ -291,7 +364,7 @@ namespace Saving_Account_Management
             this.panel_ThongTinKH.Controls.Add(this.textBox_madinhdanh);
             this.panel_ThongTinKH.Controls.Add(this.textBox_noicap);
             this.panel_ThongTinKH.Controls.Add(this.textBox_sdt);
-            this.panel_ThongTinKH.Controls.Add(this.textBox2);
+            this.panel_ThongTinKH.Controls.Add(this.textBox_hoten);
             this.panel_ThongTinKH.Controls.Add(this.label_hoten);
             this.panel_ThongTinKH.Controls.Add(this.textBox_MaKH);
             this.panel_ThongTinKH.Controls.Add(this.label_MaKH);
@@ -312,12 +385,14 @@ namespace Saving_Account_Management
             // 
             // pictureBox_chuky
             // 
+            this.pictureBox_chuky.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox_chuky.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox_chuky.Location = new System.Drawing.Point(289, 406);
             this.pictureBox_chuky.Name = "pictureBox_chuky";
             this.pictureBox_chuky.Size = new System.Drawing.Size(270, 125);
             this.pictureBox_chuky.TabIndex = 14;
             this.pictureBox_chuky.TabStop = false;
+            this.pictureBox_chuky.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pictureBox_chuky_MouseClick);
             // 
             // label_chuky
             // 
@@ -417,6 +492,7 @@ namespace Saving_Account_Management
             // textBox_madinhdanh
             // 
             this.textBox_madinhdanh.Location = new System.Drawing.Point(198, 212);
+            this.textBox_madinhdanh.MaxLength = 12;
             this.textBox_madinhdanh.Name = "textBox_madinhdanh";
             this.textBox_madinhdanh.Size = new System.Drawing.Size(361, 30);
             this.textBox_madinhdanh.TabIndex = 3;
@@ -431,16 +507,17 @@ namespace Saving_Account_Management
             // textBox_sdt
             // 
             this.textBox_sdt.Location = new System.Drawing.Point(198, 166);
+            this.textBox_sdt.MaxLength = 10;
             this.textBox_sdt.Name = "textBox_sdt";
             this.textBox_sdt.Size = new System.Drawing.Size(361, 30);
             this.textBox_sdt.TabIndex = 3;
             // 
-            // textBox2
+            // textBox_hoten
             // 
-            this.textBox2.Location = new System.Drawing.Point(198, 65);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(361, 30);
-            this.textBox2.TabIndex = 3;
+            this.textBox_hoten.Location = new System.Drawing.Point(198, 65);
+            this.textBox_hoten.Name = "textBox_hoten";
+            this.textBox_hoten.Size = new System.Drawing.Size(361, 30);
+            this.textBox_hoten.TabIndex = 3;
             // 
             // label_hoten
             // 
@@ -489,6 +566,7 @@ namespace Saving_Account_Management
             this.button_timkiem.TabIndex = 12;
             this.button_timkiem.Text = "Tìm Kiếm";
             this.button_timkiem.UseVisualStyleBackColor = false;
+            this.button_timkiem.Click += new System.EventHandler(this.button_timkiem_Click);
             // 
             // label_madinhdanh
             // 
@@ -508,77 +586,27 @@ namespace Saving_Account_Management
             this.textBox1.Size = new System.Drawing.Size(512, 32);
             this.textBox1.TabIndex = 10;
             // 
-            // label_hanguigop
+            // openFileDialog1
             // 
-            this.label_hanguigop.AutoSize = true;
-            this.label_hanguigop.Location = new System.Drawing.Point(377, 225);
-            this.label_hanguigop.Name = "label_hanguigop";
-            this.label_hanguigop.Size = new System.Drawing.Size(125, 25);
-            this.label_hanguigop.TabIndex = 0;
-            this.label_hanguigop.Text = "Hạn Gửi Góp";
+            this.openFileDialog1.FileName = "openFileDialog1";
             // 
-            // textBox_hanguigop
+            // button1
             // 
-            this.textBox_hanguigop.Location = new System.Drawing.Point(520, 222);
-            this.textBox_hanguigop.Name = "textBox_hanguigop";
-            this.textBox_hanguigop.Size = new System.Drawing.Size(142, 30);
-            this.textBox_hanguigop.TabIndex = 8;
-            // 
-            // label_ngayGGTiepTheo
-            // 
-            this.label_ngayGGTiepTheo.AutoSize = true;
-            this.label_ngayGGTiepTheo.Location = new System.Drawing.Point(50, 339);
-            this.label_ngayGGTiepTheo.Name = "label_ngayGGTiepTheo";
-            this.label_ngayGGTiepTheo.Size = new System.Drawing.Size(230, 25);
-            this.label_ngayGGTiepTheo.TabIndex = 0;
-            this.label_ngayGGTiepTheo.Text = "Ngày Gửi Góp Tiếp Theo";
-            // 
-            // textBox_ngayGGtieptheo
-            // 
-            this.textBox_ngayGGtieptheo.Location = new System.Drawing.Point(292, 339);
-            this.textBox_ngayGGtieptheo.Name = "textBox_ngayGGtieptheo";
-            this.textBox_ngayGGtieptheo.Size = new System.Drawing.Size(299, 30);
-            this.textBox_ngayGGtieptheo.TabIndex = 8;
-            // 
-            // textBox_hinhthuctralai
-            // 
-            this.textBox_hinhthuctralai.Location = new System.Drawing.Point(235, 147);
-            this.textBox_hinhthuctralai.Name = "textBox_hinhthuctralai";
-            this.textBox_hinhthuctralai.Size = new System.Drawing.Size(367, 30);
-            this.textBox_hinhthuctralai.TabIndex = 4;
-            // 
-            // label_ngaydenhan
-            // 
-            this.label_ngaydenhan.AutoSize = true;
-            this.label_ngaydenhan.Location = new System.Drawing.Point(50, 283);
-            this.label_ngaydenhan.Name = "label_ngaydenhan";
-            this.label_ngaydenhan.Size = new System.Drawing.Size(140, 25);
-            this.label_ngaydenhan.TabIndex = 0;
-            this.label_ngaydenhan.Text = "Ngày Đến Hạn";
-            // 
-            // textBox_ngaydenhang
-            // 
-            this.textBox_ngaydenhang.Location = new System.Drawing.Point(235, 280);
-            this.textBox_ngaydenhang.Name = "textBox_ngaydenhang";
-            this.textBox_ngaydenhang.Size = new System.Drawing.Size(367, 30);
-            this.textBox_ngaydenhang.TabIndex = 4;
-            // 
-            // button_moso
-            // 
-            this.button_moso.BackColor = System.Drawing.Color.Aqua;
-            this.button_moso.ForeColor = System.Drawing.Color.Red;
-            this.button_moso.Location = new System.Drawing.Point(1668, 672);
-            this.button_moso.Name = "button_moso";
-            this.button_moso.Size = new System.Drawing.Size(174, 54);
-            this.button_moso.TabIndex = 17;
-            this.button_moso.Text = "Mở Sổ";
-            this.button_moso.UseVisualStyleBackColor = false;
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.button1.ForeColor = System.Drawing.Color.Red;
+            this.button1.Location = new System.Drawing.Point(1668, 597);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(174, 54);
+            this.button1.TabIndex = 18;
+            this.button1.Text = "Tạo Mới";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // QL_TKGG_MoSo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1909, 780);
+            this.ClientSize = new System.Drawing.Size(1909, 871);
             this.Controls.Add(this.gb_TKGG_MoSo);
             this.Name = "QL_TKGG_MoSo";
             this.Text = "QL_TKGG_MoSo";
@@ -599,10 +627,9 @@ namespace Saving_Account_Management
         private System.Windows.Forms.Panel panel_thongtinsotietkiem;
         private System.Windows.Forms.TextBox textBox_laisuatcokyhan;
         private System.Windows.Forms.ComboBox comboBox_loaitien;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBox_sotiengui;
         private System.Windows.Forms.Label label_loaitien;
         private System.Windows.Forms.Label label_sotiengui;
-        private System.Windows.Forms.TextBox textBox_hanguigop;
         private System.Windows.Forms.TextBox textBox_ngayGGtieptheo;
         private System.Windows.Forms.TextBox textBox_ngaymoso;
         private System.Windows.Forms.Label label_ngaymoso;
@@ -634,7 +661,7 @@ namespace Saving_Account_Management
         private System.Windows.Forms.TextBox textBox_madinhdanh;
         private System.Windows.Forms.TextBox textBox_noicap;
         private System.Windows.Forms.TextBox textBox_sdt;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox_hoten;
         private System.Windows.Forms.Label label_hoten;
         private System.Windows.Forms.TextBox textBox_MaKH;
         private System.Windows.Forms.Label label_MaKH;
@@ -645,5 +672,8 @@ namespace Saving_Account_Management
         private System.Windows.Forms.Button button_moso;
         private System.Windows.Forms.Label label_ngaydenhan;
         private System.Windows.Forms.TextBox textBox_ngaydenhang;
+        private System.Windows.Forms.ComboBox comboBox_hanguigop;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.Button button1;
     }
 }

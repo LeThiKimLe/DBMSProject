@@ -175,8 +175,8 @@
   <data name="frmDoiMatKhau2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\frmDoiMatKhau2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="frmTimSo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\frmTimSo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Duyet" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Duyet.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="frmQuyen" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\frmQuyen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -199,6 +199,9 @@
   <data name="frmSoDuTK" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\frmSoDuTK.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Bankimg" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Bankimg.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="frmSoCoKyHan" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\frmSoCoKyHan.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -217,8 +220,8 @@
   <data name="frmPhieuThu" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\frmPhieuThu.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="frmLogin" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\frmLogin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="images" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\images.jfif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="frmPhieuLuu" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\frmPhieuLuu.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -231,6 +234,9 @@
   </data>
   <data name="frmRutTienTietKiem" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\frmRutTienTietKiem.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="frmTimSo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\frmTimSo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="frmQuayGD1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\frmQuayGD1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -268,6 +274,9 @@
   <data name="Exit" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Exit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="frmLogin" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\frmLogin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="frmCalculator" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\frmCalculator.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -280,23 +289,23 @@
   <data name="ThanhTien" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ThanhTien.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="frmMoSoTietKiem" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\frmMoSoTietKiem.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Search" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Search.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="tải xuống" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\tải xuống.jfif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="LogoDHAG" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\LogoDHAG.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="frmBangKeTinhLai" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\frmBangKeTinhLai.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="frmPhatSinhTK" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\frmPhatSinhTK.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="frmTimNhanVien" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\frmTimNhanVien.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Duyet" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Duyet.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="frmChiTietPSGD" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\frmChiTietPSGD.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -306,6 +315,9 @@
   </data>
   <data name="frmLoaiTK" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\frmLoaiTK.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Login" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Login.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="frmPhanNhom" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\frmPhanNhom.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -322,10 +334,10 @@
   <data name="frmNhomNguoiDung" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\frmNhomNguoiDung.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="frmBangKeTinhLai" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\frmBangKeTinhLai.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="frmMoSoTietKiem" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\frmMoSoTietKiem.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Bankimg" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Bankimg.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="images1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\images1.jfif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

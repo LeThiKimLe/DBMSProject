@@ -55,9 +55,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BS_Layer\BS_DanhMuc.cs" />
     <Compile Include="BS_Layer\BS_DSKhachHang.cs" />
     <Compile Include="BS_Layer\BS_TK1L_GiaoDichTK.cs" />
     <Compile Include="CN_ThongTin.cs">
+	<Compile Include="BS_Layer\BS_DSNhanVien.cs" />
+	<Compile Include="BS_Layer\BS_MoSoTK1L.cs" />
+	<Compile Include="BS_FromDangNhap.cs">
+    <Compile Include="BS_Layer\BS_MoSoTKGG.cs" />
+	<Compile Include="CN_ThongTin.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="CN_ThongTin.Designer.cs">
@@ -88,11 +94,16 @@
     <Compile Include="DM_LoaiTien.Designer.cs">
       <DependentUpon>DM_LoaiTien.cs</DependentUpon>
     </Compile>
+    <Compile Include="Extensions\DataGridViewExtension.cs" />
+    <Compile Include="Extensions\FormExtension.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormBase.cs">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormDangNhap.cs">
       <SubType>Form</SubType>
@@ -252,12 +263,20 @@
     <Compile Include="QL_TKGG_TBDenHan.Designer.cs">
       <DependentUpon>QL_TKGG_TBDenHan.cs</DependentUpon>
     </Compile>
+    <Compile Include="Setting\AppSetting.cs" />
     <Compile Include="TK_SoSoTK.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="TK_SoSoTK.Designer.cs">
       <DependentUpon>TK_SoSoTK.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControl\TextBoxs\TextBoxValidation.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UserControl\TextBoxs\TextBoxValidationBase.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Utils\DataGridViewUtils.cs" />
     <EmbeddedResource Include="CN_ThongTin.resx">
       <DependentUpon>CN_ThongTin.cs</DependentUpon>
     </EmbeddedResource>
@@ -590,6 +609,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Bankimg.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tải xuống.jfif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images.jfif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Login.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images1.jfif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

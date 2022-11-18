@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Saving_Account_Management.DB_Layer;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,17 +13,20 @@ namespace Saving_Account_Management
 {
     public partial class Form1 : Form
     {
-
+        DB_Connect db = null;
+        
         private GroupBox my_work = new GroupBox();
         public Form1()
         {
+
+            db = new DB_Connect();
             InitializeComponent();
             task_screen.Controls.Add(my_work);
             task_screen2.Controls.Add(my_work);
             task_screen3.Controls.Add(my_work);
             task_screen4.Controls.Add(my_work);
         }
-
+ 
         private void materialTabSelector2_Click(object sender, EventArgs e)
         {
 
@@ -242,6 +246,7 @@ namespace Saving_Account_Management
             task_screen2.Controls.Add(my_work);
             my_work.Dock = DockStyle.Fill;
             my_work.BringToFront();
+        
         }
 
         private void btn_TKSoSoTK_Click(object sender, EventArgs e)
@@ -272,6 +277,18 @@ namespace Saving_Account_Management
             task_screen.Controls.Add(my_work);
             my_work.Dock = DockStyle.Fill;
             my_work.BringToFront();
+        }
+
+        private void btn_Logout_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Bạn chắc chắn đăng xuất ?", "Đăng xuất", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                this.Hide();
+                FormDangNhap from = new FormDangNhap();
+                from.ShowDialog();
+            }
+
         }
     }
 }

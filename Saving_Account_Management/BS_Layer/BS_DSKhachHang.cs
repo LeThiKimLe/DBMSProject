@@ -1,12 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Data.SqlClient;
+﻿using System.Data.SqlClient;
 using System.Data;
-using System.Windows.Forms;
-
 using Saving_Account_Management.DB_Layer;
 
 namespace Saving_Account_Management.BS_Layer
@@ -14,62 +7,53 @@ namespace Saving_Account_Management.BS_Layer
     class BS_DSKhachHang
     {
         DB_Connect db = null;
+        string err;
         public BS_DSKhachHang()
         {
             db = new DB_Connect();
         }
+        
         public DataSet LayDanhSachKhachHang()
         {
             db.new_comm();
-            //string sql = "SELECT MaKhachHang,HoTen,NgaySinh,SDT,MaDinhDanh,NgayCap,NoiCap,DiaChi,DangSuDung FROM KHACH_HANG ";
             string sql = "SELECT * FROM KHACH_HANG ";
             return db.ExecuteQueryDataSet(sql, CommandType.Text);
         }
-        public bool ThemNhanVien(string MaNV, string TenNV, string DiaChi, string MaPB, string SDT, ref string err)
+
+        public DataSet TimKiem(string loaiTK, string maKH)
         {
-            string sqlString = "THEM_NHAN_VIEN";
-            db.new_comm();
-            db.comm.Parameters.Add("@maNV", SqlDbType.Char).Value = MaNV;
-            db.comm.Parameters.Add("@tenNV", SqlDbType.NVarChar).Value = TenNV;
-            db.comm.Parameters.Add("@diaChi", SqlDbType.NVarChar).Value = DiaChi;
-            db.comm.Parameters.Add("@maPB", SqlDbType.Char).Value = MaPB;
-            db.comm.Parameters.Add("@soDT", SqlDbType.Char).Value = SDT;
-            return db.MyExecuteNonQuery(sqlString, CommandType.StoredProcedure, ref err);
-        }
-        public bool XoaNhanVien(ref string err, string MaNV)
-        {
-            string sqlString = "XOA_NHAN_VIEN";
-            db.new_comm();
-            db.comm.Parameters.Add("@maNV", SqlDbType.Char).Value = MaNV;
-            return db.MyExecuteNonQuery(sqlString, CommandType.StoredProcedure, ref err);
-        }
-        public bool CapNhatNhanVien(string MaNV, string TenNV, string DiaChi, string MaPB, string SDT, ref string err)
-        {
-            string sqlString = "CAP_NHAT_NHAN_VIEN";
-            db.new_comm();
-            db.comm.Parameters.Add("@maNV", SqlDbType.Char).Value = MaNV;
-            db.comm.Parameters.Add("@tenNV", SqlDbType.NVarChar).Value = TenNV;
-            db.comm.Parameters.Add("@diaChi", SqlDbType.NVarChar).Value = DiaChi;
-            db.comm.Parameters.Add("@maPB", SqlDbType.Char).Value = MaPB;
-            db.comm.Parameters.Add("@soDT", SqlDbType.Char).Value = SDT;
-            return db.MyExecuteNonQuery(sqlString, CommandType.StoredProcedure, ref err);
+            DB_Connect conn = new DB_Connect();
+            string temp = "SELECT* ROM KHACH_HANG WHERE " + loaiTK + " LIKE '%" + maKH + "%'";
+            DataSet ds = conn.ExecuteQueryDataSet(temp, CommandType.Text);
+            return ds;
         }
 
-        public DataSet getPB()
+        public DataSet TimKiemMaDinhDanh(string maDinhDanh)
         {
-            string sqlString = "SELECT * from dbo.LAY_PHONG_BAN()";
-            db.new_comm();
-            DataSet dts = db.ExecuteQueryDataSet(sqlString, CommandType.Text);
-            return dts;
+            DB_Connect conn = new DB_Connect();
+            string temp = "SELECT* FROM KHACH_HANG WHERE MADINHDANH = @mdd";
+            DataSet ds = null;
+            ds = conn.ExecuteQueryDataSet(temp, CommandType.Text,
+                new SqlParameter("@mdd", maDinhDanh));
+            return ds;
         }
 
-        public string get_PB_Name(string MaPB)
+        public bool SuaKhachHang(string maKhachHang, string hoTen, string sdt,string diaChi, string maDinhDanh, 
+                                 string noiCap, string ngaySinh,string ngayCap,  string image)
         {
-            string sqlString = "SELECT dbo.LAY_TEN_PHONG_BAN(@maPB)";
+            string sqlString = "SuaKhachHang";
             db.new_comm();
-            db.comm.Parameters.AddWithValue("@maPB", MaPB);
-            string kq = db.ExecuteQueryScalar<string>(sqlString, CommandType.Text);
-            return kq;
+            db.comm.Parameters.Add("@maKhachHang", SqlDbType.VarChar).Value = maKhachHang;
+            db.comm.Parameters.Add("@hoTen", SqlDbType.NVarChar).Value = hoTen;
+            db.comm.Parameters.Add("@ngaySinh", SqlDbType.VarChar).Value = ngaySinh;
+            db.comm.Parameters.Add("@sdt", SqlDbType.Char).Value = sdt;
+            db.comm.Parameters.Add("@maDinhDanh", SqlDbType.VarChar).Value = maDinhDanh;
+            db.comm.Parameters.Add("@ngayCap", SqlDbType.VarChar).Value = ngayCap;
+            db.comm.Parameters.Add("@noiCap", SqlDbType.NVarChar).Value = noiCap;
+            db.comm.Parameters.Add("@diaChi", SqlDbType.NVarChar).Value = diaChi;
+            db.comm.Parameters.Add("@imageFolderPath", SqlDbType.NVarChar).Value = image;
+            var result = db.MyExecuteNonQuery(sqlString, CommandType.StoredProcedure, ref err);
+            return result;
         }
 
     }
