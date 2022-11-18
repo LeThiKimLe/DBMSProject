@@ -61,6 +61,9 @@
     <Compile Include="BS_Layer\BS_DSNhanVien.cs" />
     <Compile Include="BS_Layer\BS_MoSoTK1L.cs" />
     <Compile Include="BS_Layer\BS_MoSoTKGG.cs" />
+	<Compile Include="BS_Layer\BS_FromDangNhap.cs" />
+	<Compile Include="BS_Layer\BS_DSSoTK.cs" />
+
     <Compile Include="CN_ThongTin.cs">
       <SubType>Form</SubType>
     </Compile>
