@@ -61,9 +61,8 @@
     <Compile Include="BS_Layer\BS_DSNhanVien.cs" />
     <Compile Include="BS_Layer\BS_MoSoTK1L.cs" />
     <Compile Include="BS_Layer\BS_MoSoTKGG.cs" />
-	<Compile Include="BS_Layer\BS_FromDangNhap.cs" />
-	<Compile Include="BS_Layer\BS_DSSoTK.cs" />
-
+    <Compile Include="BS_Layer\BS_FromDangNhap.cs" />
+    <Compile Include="BS_Layer\BS_DSSoTK.cs" />
     <Compile Include="CN_ThongTin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -387,6 +386,7 @@
     <EmbeddedResource Include="TK_SoSoTK.resx">
       <DependentUpon>TK_SoSoTK.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="ClassDiagram1.cd" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

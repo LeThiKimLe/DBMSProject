@@ -8,6 +8,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
+using Saving_Account_Management.Setting;
 
 namespace Saving_Account_Management
 {
@@ -132,18 +133,19 @@ namespace Saving_Account_Management
                 openFileDialog1.FileName = "";
             }
             DateTime ngayPhatSinhGiaoDich = DateTime.Now;
-            string maNhanVien = "NV006";
+            string maNhanVien = AppSettingSingleton.getSetting().CurrentMaNhanVien;
+            string err = null;
             bool checkThem = action.ThemNguoiDongSoHuu(txt_MaSo.Text, ngayPhatSinhGiaoDich, maNhanVien, 
                                 txt_HoTen.Text, dt_NgaySinh.Value, txt_Sdt.Text, txt_MaDinhDanh.Text, 
-                                dt_NgayCap.Value, txt_NoiCap.Text, txt_DiaChi.Text, openFileDialog1.FileName);
+                                dt_NgayCap.Value, txt_NoiCap.Text, txt_DiaChi.Text, openFileDialog1.FileName, ref err);
 
-            if (checkThem == true)
+            if (checkThem == true && err==null)
             {
                 MessageBox.Show("Đã thêm khách hàng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 clearTxt();
             }
             else
-                MessageBox.Show("Nhập sai mã sổ");
+                MessageBox.Show("Nhập sai mã sổ "+ err, "Lỗi");
 
         }
 

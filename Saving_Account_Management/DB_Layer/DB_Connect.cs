@@ -25,14 +25,14 @@ namespace Saving_Account_Management.DB_Layer
 
         public void new_comm()
         {
+            if (link.State == ConnectionState.Open)
+                link.Close();
+            link.Open();
             comm = link.CreateCommand();
         }
 
         public DataSet ExecuteQueryDataSet(string strSQL, CommandType ct, params SqlParameter[] sqlParameters)
         {
-            if (link.State == ConnectionState.Open)
-                link.Close();
-            link.Open();
             comm.CommandText = strSQL;
             comm.CommandType = ct;
             comm.Parameters.AddRange(sqlParameters);
@@ -44,9 +44,7 @@ namespace Saving_Account_Management.DB_Layer
 
         public T ExecuteQueryScalar<T>(string strSQL, CommandType ct)
         {
-            if (link.State == ConnectionState.Open)
-                link.Close();
-            link.Open();
+           
             comm.CommandText = strSQL;
             comm.CommandType = ct;
             T kq = (T)comm.ExecuteScalar();
@@ -57,9 +55,6 @@ namespace Saving_Account_Management.DB_Layer
         public bool MyExecuteNonQuery(string strSQL, CommandType ct, ref string error)
         {
             bool f = false;
-            if (link.State == ConnectionState.Open)
-                link.Close();
-            link.Open();
             comm.CommandText = strSQL;
             comm.CommandType = ct;
             try

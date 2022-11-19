@@ -13,14 +13,13 @@ using System.Data.SqlClient;
 using Saving_Account_Management.DB_Layer;
 using Saving_Account_Management.Setting;
 
-
 namespace Saving_Account_Management
 {
     public partial class FormDangNhap : Form
-    {
-        private BS_FromDangNhap act = new BS_FromDangNhap();
+    { 
         public string UserLogin = "";
         DB_Connect db = null;
+        BS_FromDangNhap act1 = new BS_FromDangNhap();
         public FormDangNhap()
         {
             InitializeComponent();
@@ -58,10 +57,22 @@ namespace Saving_Account_Management
                     db = new DB_Connect(tbUserName.Text, tbPassWord.Text);
                     AppSettingSingleton.getSetting().CurrentTenDangNhap = tbUserName.Text;
                     AppSettingSingleton.getSetting().SQLConnection = db;
-                    maNhanVien = act.KiemTraDangNhap(tbUserName.Text, tbPassWord.Text);
+                    BS_DanhMuc act2 = new BS_DanhMuc();
+                    maNhanVien = act1.KiemTraDangNhap(tbUserName.Text, tbPassWord.Text);
                     AppSettingSingleton.getSetting().CurrentMaNhanVien = maNhanVien;
+                    AppSettingSingleton.getSetting().CurrentQuyen=act2.LayChucVu(maNhanVien).Tables[0].Rows[0][1].ToString();
                     this.Hide();
                     Form1 frm = new Form1();
+
+                    foreach (Control ctrl in frm.panelFunction.Controls)
+                    {
+                        if (ctrl.Tag != null)
+                            if (String.Compare(ctrl.Tag.ToString(), AppSettingSingleton.getSetting().CurrentQuyen) > 0)
+                            {
+                                ctrl.Visible = false;
+                            }
+                    }
+
                     frm.ShowDialog();
                 }
                 catch (SqlException e)
@@ -70,6 +81,9 @@ namespace Saving_Account_Management
                 }
             }
         }
+
+        
+           
 
         private void tbUserName_KeyPress(object sender, KeyPressEventArgs e)
         {

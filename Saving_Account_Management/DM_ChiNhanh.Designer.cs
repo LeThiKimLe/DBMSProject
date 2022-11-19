@@ -48,11 +48,11 @@ namespace Saving_Account_Management
             this.gb_DMChiNhanh.Controls.Add(this.label_);
             this.gb_DMChiNhanh.Controls.Add(this.panel1);
             this.gb_DMChiNhanh.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.gb_DMChiNhanh.Location = new System.Drawing.Point(10, 7);
-            this.gb_DMChiNhanh.Margin = new System.Windows.Forms.Padding(2);
+            this.gb_DMChiNhanh.Location = new System.Drawing.Point(13, 9);
+            this.gb_DMChiNhanh.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gb_DMChiNhanh.Name = "gb_DMChiNhanh";
-            this.gb_DMChiNhanh.Padding = new System.Windows.Forms.Padding(2);
-            this.gb_DMChiNhanh.Size = new System.Drawing.Size(1044, 648);
+            this.gb_DMChiNhanh.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.gb_DMChiNhanh.Size = new System.Drawing.Size(1392, 798);
             this.gb_DMChiNhanh.TabIndex = 2;
             this.gb_DMChiNhanh.TabStop = false;
             // 
@@ -60,9 +60,10 @@ namespace Saving_Account_Management
             // 
             this.label_.AutoSize = true;
             this.label_.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label_.Location = new System.Drawing.Point(429, 0);
+            this.label_.Location = new System.Drawing.Point(572, 0);
+            this.label_.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label_.Name = "label_";
-            this.label_.Size = new System.Drawing.Size(234, 25);
+            this.label_.Size = new System.Drawing.Size(295, 32);
             this.label_.TabIndex = 2;
             this.label_.Text = "THÔNG TIN CHI NHÁNH";
             // 
@@ -73,10 +74,10 @@ namespace Saving_Account_Management
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel1.Controls.Add(this.dataGridView_ChiNhanh);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(2, 22);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2);
+            this.panel1.Location = new System.Drawing.Point(3, 27);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1040, 624);
+            this.panel1.Size = new System.Drawing.Size(1386, 769);
             this.panel1.TabIndex = 3;
             // 
             // dataGridView_ChiNhanh
@@ -89,10 +90,12 @@ namespace Saving_Account_Management
             this.Col_DiaChiCN,
             this.Col_SLNV,
             this.Col_TenGD});
-            this.dataGridView_ChiNhanh.Location = new System.Drawing.Point(17, 34);
+            this.dataGridView_ChiNhanh.Location = new System.Drawing.Point(23, 42);
+            this.dataGridView_ChiNhanh.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataGridView_ChiNhanh.Name = "dataGridView_ChiNhanh";
             this.dataGridView_ChiNhanh.RowHeadersVisible = false;
-            this.dataGridView_ChiNhanh.Size = new System.Drawing.Size(940, 397);
+            this.dataGridView_ChiNhanh.RowHeadersWidth = 51;
+            this.dataGridView_ChiNhanh.Size = new System.Drawing.Size(1253, 489);
             this.dataGridView_ChiNhanh.TabIndex = 1;
             this.dataGridView_ChiNhanh.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_ChiNhanh_CellClick_1);
             // 
@@ -101,6 +104,7 @@ namespace Saving_Account_Management
             this.Col_MaCN.DataPropertyName = "MaChiNhanh";
             this.Col_MaCN.FillWeight = 50F;
             this.Col_MaCN.HeaderText = "Mã Chi Nhánh";
+            this.Col_MaCN.MinimumWidth = 6;
             this.Col_MaCN.Name = "Col_MaCN";
             this.Col_MaCN.Width = 145;
             // 
@@ -108,6 +112,7 @@ namespace Saving_Account_Management
             // 
             this.Col_TenCN.DataPropertyName = "TenChiNhanh";
             this.Col_TenCN.HeaderText = "Tên Chi Nhánh";
+            this.Col_TenCN.MinimumWidth = 6;
             this.Col_TenCN.Name = "Col_TenCN";
             this.Col_TenCN.Width = 200;
             // 
@@ -115,6 +120,7 @@ namespace Saving_Account_Management
             // 
             this.Col_DiaChiCN.DataPropertyName = "DiaChi";
             this.Col_DiaChiCN.HeaderText = "Địa Chỉ ";
+            this.Col_DiaChiCN.MinimumWidth = 6;
             this.Col_DiaChiCN.Name = "Col_DiaChiCN";
             this.Col_DiaChiCN.Width = 220;
             // 
@@ -122,23 +128,25 @@ namespace Saving_Account_Management
             // 
             this.Col_SLNV.DataPropertyName = "SoLuong";
             this.Col_SLNV.HeaderText = "Số Lượng Nhân Viên";
+            this.Col_SLNV.MinimumWidth = 6;
             this.Col_SLNV.Name = "Col_SLNV";
             this.Col_SLNV.Width = 170;
             // 
             // Col_TenGD
             // 
-            this.Col_TenGD.DataPropertyName = "TenGD";
+            this.Col_TenGD.DataPropertyName = "HoTen";
             this.Col_TenGD.HeaderText = "Tên Giám Đốc";
+            this.Col_TenGD.MinimumWidth = 6;
             this.Col_TenGD.Name = "Col_TenGD";
             this.Col_TenGD.Width = 200;
             // 
             // DM_ChiNhanh
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1028, 609);
+            this.ClientSize = new System.Drawing.Size(1371, 750);
             this.Controls.Add(this.gb_DMChiNhanh);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "DM_ChiNhanh";
             this.Text = "DM_ChiNhanh";
             this.gb_DMChiNhanh.ResumeLayout(false);

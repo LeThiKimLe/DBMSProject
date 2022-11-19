@@ -17,7 +17,7 @@ namespace Saving_Account_Management
             InitializeComponent();
             task_screen.Controls.Add(my_work);
             task_screen2.Controls.Add(my_work);
-            task_screen3.Controls.Add(my_work);
+            
             task_screen4.Controls.Add(my_work);
         }
 
@@ -377,23 +377,6 @@ namespace Saving_Account_Management
                 MessageBox.Show("Người dùng không có quyền truy cập chức năng này\n" + err.Message, "Lỗi truy cập");
             }
 
-        }
-
-        private void btn_TKSoSoTK_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                task_screen3.Controls.Remove(my_work);
-                TK_SoSoTK new_win = new TK_SoSoTK();
-                my_work = new_win.gb_TKSoSoTK;
-                task_screen3.Controls.Add(my_work);
-                my_work.Dock = DockStyle.Fill;
-                my_work.BringToFront();
-            }
-            catch (SqlException err)
-            {
-                MessageBox.Show("Người dùng không có quyền truy cập chức năng này\n" + err.Message, "Lỗi truy cập");
-            }
         }
 
         private void btn_CNThongTin_Click(object sender, EventArgs e)

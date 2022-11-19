@@ -30,6 +30,12 @@ namespace Saving_Account_Management
         private void InitializeComponent()
         {
             this.gb_DSNhanVien = new System.Windows.Forms.GroupBox();
+            this.fix_btn = new System.Windows.Forms.Button();
+            this.AddNV_btn = new System.Windows.Forms.Button();
+            this.DeleteNV_btn = new System.Windows.Forms.Button();
+            this.save_btn = new System.Windows.Forms.Button();
+            this.button_huy = new System.Windows.Forms.Button();
+            this.comboBox_timtheoCN = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.button_timkiem = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -43,6 +49,8 @@ namespace Saving_Account_Management
             this.TenNhom = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaChiNhanh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.cbbChucVu = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.dateTimePicker_ngaysinh = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
             this.comboBox_machinhanh = new System.Windows.Forms.ComboBox();
@@ -56,12 +64,6 @@ namespace Saving_Account_Management
             this.tenNV_tb = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.comboBox_timtheoCN = new System.Windows.Forms.ComboBox();
-            this.fix_btn = new System.Windows.Forms.Button();
-            this.AddNV_btn = new System.Windows.Forms.Button();
-            this.DeleteNV_btn = new System.Windows.Forms.Button();
-            this.save_btn = new System.Windows.Forms.Button();
-            this.button_huy = new System.Windows.Forms.Button();
             this.gb_DSNhanVien.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_NV)).BeginInit();
             this.panel1.SuspendLayout();
@@ -86,6 +88,92 @@ namespace Saving_Account_Management
             this.gb_DSNhanVien.Size = new System.Drawing.Size(1883, 762);
             this.gb_DSNhanVien.TabIndex = 5;
             this.gb_DSNhanVien.TabStop = false;
+            // 
+            // fix_btn
+            // 
+            this.fix_btn.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.fix_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.fix_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Green;
+            this.fix_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.fix_btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.fix_btn.Location = new System.Drawing.Point(68, 685);
+            this.fix_btn.Name = "fix_btn";
+            this.fix_btn.Size = new System.Drawing.Size(197, 42);
+            this.fix_btn.TabIndex = 65;
+            this.fix_btn.Text = "Sửa thông tin";
+            this.fix_btn.UseVisualStyleBackColor = false;
+            this.fix_btn.Click += new System.EventHandler(this.fix_btn_Click);
+            // 
+            // AddNV_btn
+            // 
+            this.AddNV_btn.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.AddNV_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.AddNV_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Green;
+            this.AddNV_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.AddNV_btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.AddNV_btn.Location = new System.Drawing.Point(192, 553);
+            this.AddNV_btn.Name = "AddNV_btn";
+            this.AddNV_btn.Size = new System.Drawing.Size(200, 42);
+            this.AddNV_btn.TabIndex = 68;
+            this.AddNV_btn.Text = "Thêm nhân viên";
+            this.AddNV_btn.UseVisualStyleBackColor = false;
+            this.AddNV_btn.Click += new System.EventHandler(this.AddNV_btn_Click);
+            // 
+            // DeleteNV_btn
+            // 
+            this.DeleteNV_btn.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.DeleteNV_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.DeleteNV_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Green;
+            this.DeleteNV_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.DeleteNV_btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.DeleteNV_btn.Location = new System.Drawing.Point(318, 685);
+            this.DeleteNV_btn.Name = "DeleteNV_btn";
+            this.DeleteNV_btn.Size = new System.Drawing.Size(197, 42);
+            this.DeleteNV_btn.TabIndex = 69;
+            this.DeleteNV_btn.Text = "Xóa nhân viên";
+            this.DeleteNV_btn.UseVisualStyleBackColor = false;
+            this.DeleteNV_btn.Click += new System.EventHandler(this.DeleteNV_btn_Click);
+            // 
+            // save_btn
+            // 
+            this.save_btn.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.save_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.save_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Green;
+            this.save_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.save_btn.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.save_btn.Location = new System.Drawing.Point(68, 619);
+            this.save_btn.Name = "save_btn";
+            this.save_btn.Size = new System.Drawing.Size(200, 42);
+            this.save_btn.TabIndex = 66;
+            this.save_btn.Text = "Lưu Thông Tin";
+            this.save_btn.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.save_btn.UseVisualStyleBackColor = false;
+            this.save_btn.Click += new System.EventHandler(this.save_btn_Click);
+            // 
+            // button_huy
+            // 
+            this.button_huy.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.button_huy.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.button_huy.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Green;
+            this.button_huy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_huy.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.button_huy.Location = new System.Drawing.Point(318, 619);
+            this.button_huy.Name = "button_huy";
+            this.button_huy.Size = new System.Drawing.Size(197, 42);
+            this.button_huy.TabIndex = 67;
+            this.button_huy.Text = "Hủy Thao Tác";
+            this.button_huy.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button_huy.UseVisualStyleBackColor = false;
+            this.button_huy.Click += new System.EventHandler(this.button_huy_Click);
+            // 
+            // comboBox_timtheoCN
+            // 
+            this.comboBox_timtheoCN.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox_timtheoCN.FormattingEnabled = true;
+            this.comboBox_timtheoCN.Location = new System.Drawing.Point(879, 84);
+            this.comboBox_timtheoCN.Name = "comboBox_timtheoCN";
+            this.comboBox_timtheoCN.Size = new System.Drawing.Size(392, 33);
+            this.comboBox_timtheoCN.TabIndex = 64;
             // 
             // label2
             // 
@@ -213,6 +301,8 @@ namespace Saving_Account_Management
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.cbbChucVu);
+            this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.dateTimePicker_ngaysinh);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.comboBox_machinhanh);
@@ -227,10 +317,27 @@ namespace Saving_Account_Management
             this.panel1.Controls.Add(this.label11);
             this.panel1.Controls.Add(this.label12);
             this.panel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel1.Location = new System.Drawing.Point(40, 163);
+            this.panel1.Location = new System.Drawing.Point(38, 92);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(499, 360);
+            this.panel1.Size = new System.Drawing.Size(499, 406);
             this.panel1.TabIndex = 0;
+            // 
+            // cbbChucVu
+            // 
+            this.cbbChucVu.FormattingEnabled = true;
+            this.cbbChucVu.Location = new System.Drawing.Point(196, 354);
+            this.cbbChucVu.Name = "cbbChucVu";
+            this.cbbChucVu.Size = new System.Drawing.Size(275, 33);
+            this.cbbChucVu.TabIndex = 65;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(18, 354);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(85, 25);
+            this.label3.TabIndex = 64;
+            this.label3.Text = "Chức vụ";
             // 
             // dateTimePicker_ngaysinh
             // 
@@ -342,87 +449,6 @@ namespace Saving_Account_Management
             this.label12.Text = "Tên Nhân viên";
             this.label12.Click += new System.EventHandler(this.label12_Click);
             // 
-            // comboBox_timtheoCN
-            // 
-            this.comboBox_timtheoCN.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox_timtheoCN.FormattingEnabled = true;
-            this.comboBox_timtheoCN.Location = new System.Drawing.Point(879, 84);
-            this.comboBox_timtheoCN.Name = "comboBox_timtheoCN";
-            this.comboBox_timtheoCN.Size = new System.Drawing.Size(392, 33);
-            this.comboBox_timtheoCN.TabIndex = 64;
-            // 
-            // fix_btn
-            // 
-            this.fix_btn.BackColor = System.Drawing.Color.PaleTurquoise;
-            this.fix_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.fix_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Green;
-            this.fix_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.fix_btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.fix_btn.Location = new System.Drawing.Point(68, 685);
-            this.fix_btn.Name = "fix_btn";
-            this.fix_btn.Size = new System.Drawing.Size(197, 42);
-            this.fix_btn.TabIndex = 65;
-            this.fix_btn.Text = "Sửa thông tin";
-            this.fix_btn.UseVisualStyleBackColor = false;
-            // 
-            // AddNV_btn
-            // 
-            this.AddNV_btn.BackColor = System.Drawing.Color.PaleTurquoise;
-            this.AddNV_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.AddNV_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Green;
-            this.AddNV_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.AddNV_btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.AddNV_btn.Location = new System.Drawing.Point(192, 553);
-            this.AddNV_btn.Name = "AddNV_btn";
-            this.AddNV_btn.Size = new System.Drawing.Size(200, 42);
-            this.AddNV_btn.TabIndex = 68;
-            this.AddNV_btn.Text = "Thêm nhân viên";
-            this.AddNV_btn.UseVisualStyleBackColor = false;
-            // 
-            // DeleteNV_btn
-            // 
-            this.DeleteNV_btn.BackColor = System.Drawing.Color.PaleTurquoise;
-            this.DeleteNV_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.DeleteNV_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Green;
-            this.DeleteNV_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.DeleteNV_btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.DeleteNV_btn.Location = new System.Drawing.Point(318, 685);
-            this.DeleteNV_btn.Name = "DeleteNV_btn";
-            this.DeleteNV_btn.Size = new System.Drawing.Size(197, 42);
-            this.DeleteNV_btn.TabIndex = 69;
-            this.DeleteNV_btn.Text = "Xóa nhân viên";
-            this.DeleteNV_btn.UseVisualStyleBackColor = false;
-            // 
-            // save_btn
-            // 
-            this.save_btn.BackColor = System.Drawing.Color.PaleTurquoise;
-            this.save_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.save_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Green;
-            this.save_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.save_btn.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.save_btn.Location = new System.Drawing.Point(68, 619);
-            this.save_btn.Name = "save_btn";
-            this.save_btn.Size = new System.Drawing.Size(200, 42);
-            this.save_btn.TabIndex = 66;
-            this.save_btn.Text = "Lưu Thông Tin";
-            this.save_btn.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.save_btn.UseVisualStyleBackColor = false;
-            // 
-            // button_huy
-            // 
-            this.button_huy.BackColor = System.Drawing.Color.PaleTurquoise;
-            this.button_huy.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.button_huy.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Green;
-            this.button_huy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_huy.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.button_huy.Location = new System.Drawing.Point(318, 619);
-            this.button_huy.Name = "button_huy";
-            this.button_huy.Size = new System.Drawing.Size(197, 42);
-            this.button_huy.TabIndex = 67;
-            this.button_huy.Text = "Hủy Thao Tác";
-            this.button_huy.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button_huy.UseVisualStyleBackColor = false;
-            // 
             // QL_DSNhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -475,5 +501,7 @@ namespace Saving_Account_Management
         private System.Windows.Forms.Button DeleteNV_btn;
         private System.Windows.Forms.Button save_btn;
         private System.Windows.Forms.Button button_huy;
+        private System.Windows.Forms.ComboBox cbbChucVu;
+        private System.Windows.Forms.Label label3;
     }
 }

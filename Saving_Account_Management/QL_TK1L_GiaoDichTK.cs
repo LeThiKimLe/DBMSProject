@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using Saving_Account_Management.Setting;
 using Saving_Account_Management.BS_Layer;
 using Saving_Account_Management.FormGiaoDich;
 using System.IO;
@@ -18,9 +18,13 @@ namespace Saving_Account_Management
     {
         private BS_TK1L_GiaoDichTK action = new BS_TK1L_GiaoDichTK();
         string makhachhang = null;
+        string manhanvien = null;
+        string tennhanvien = null;
         public QL_TK1L_GiaoDichTK()
         {
             InitializeComponent();
+            manhanvien = AppSettingSingleton.getSetting().CurrentMaNhanVien;
+            tennhanvien = AppSettingSingleton.getSetting().CurrentTenhanVien;
         }
 
         private void button_hienso_Click(object sender, EventArgs e)
@@ -143,74 +147,77 @@ namespace Saving_Account_Management
         {
             int r = dgv_LichSuGD.CurrentCell.RowIndex;
             string loaigiaodich;
-            loaigiaodich = dgv_LichSuGD.Rows[r].Cells[1].Value.ToString();
-            if (loaigiaodich=="GD_GTTK")
+            if (dgv_LichSuGD.Rows.Count != 0)
             {
-                FormGiaoDichLanDau f1 = new FormGiaoDichLanDau(dgv_LichSuGD.Rows[r].Cells[0].Value.ToString()); 
-                f1.ShowDialog();
-            }
-
-            if (loaigiaodich == "GD_RLDK")
-            {
-                FormRutLaiDinhKy f2 = new FormRutLaiDinhKy(dgv_LichSuGD.Rows[r].Cells[0].Value.ToString(), txtMaKH.Text, "NV001");
-                f2.ShowDialog();
-                dgv_LichSuGD.DataSource = action.get_DS_GiaoDich(txtMaSo.Text).Tables[0];
-            }
-            
-            if (loaigiaodich == "GD_RLS")
-            {
-                FormRutLaiSau f3 = new FormRutLaiSau(dgv_LichSuGD.Rows[r].Cells[0].Value.ToString(), txtMaKH.Text, "NV001");
-                f3.ShowDialog();
-                dgv_LichSuGD.DataSource = action.get_DS_GiaoDich(txtMaSo.Text).Tables[0];
-            }
-
-            if (loaigiaodich == "GD_RLT")
-            {
-                FormRutLaiTruoc f4 = new FormRutLaiTruoc(dgv_LichSuGD.Rows[r].Cells[0].Value.ToString(), txtMaKH.Text, "NV001");
-                f4.ShowDialog();
-                dgv_LichSuGD.DataSource = action.get_DS_GiaoDich(txtMaSo.Text).Tables[0];
-            }
-
-            if (loaigiaodich == "GD_RLTH")
-            {
-                FormRutLaiTruocHan f5 = new FormRutLaiTruocHan(dgv_LichSuGD.Rows[r].Cells[0].Value.ToString(), txtMaKH.Text, "NV001");
-                f5.ShowDialog();
-                dgv_LichSuGD.DataSource = action.get_DS_GiaoDich(txtMaSo.Text).Tables[0];
-            }
-
-            if (loaigiaodich == "GD_TTTH")
-            {
-                if (txtHinhThucGui.Text != "Gửi góp")
+                loaigiaodich = dgv_LichSuGD.Rows[r].Cells[1].Value.ToString();
+                if (loaigiaodich == "GD_GTTK")
                 {
-                    FormTatToanTruocHan f6 = new FormTatToanTruocHan(dgv_LichSuGD.Rows[r].Cells[0].Value.ToString(), txtMaKH.Text, "NV001");
-                    f6.ShowDialog();
-                }
-                else
-                {
-                    FormTatToanTruocHan f6 = new FormTatToanTruocHan(dgv_LichSuGD.Rows[r].Cells[0].Value.ToString(), txtMaKH.Text, "NV001", true);
-                    f6.ShowDialog();
+                    FormGiaoDichLanDau f1 = new FormGiaoDichLanDau(dgv_LichSuGD.Rows[r].Cells[0].Value.ToString());
+                    f1.ShowDialog();
                 }
 
-                dgv_LichSuGD.DataSource = action.get_DS_GiaoDich(txtMaSo.Text).Tables[0];
-            }
+                if (loaigiaodich == "GD_RLDK")
+                {
+                    FormRutLaiDinhKy f2 = new FormRutLaiDinhKy(dgv_LichSuGD.Rows[r].Cells[0].Value.ToString(), txtMaKH.Text, manhanvien);
+                    f2.ShowDialog();
+                    dgv_LichSuGD.DataSource = action.get_DS_GiaoDich(txtMaSo.Text).Tables[0];
+                }
 
-            if (loaigiaodich == "GD_TTDH")
-            {
-                FormTatToanDungHan f7 = new FormTatToanDungHan(dgv_LichSuGD.Rows[r].Cells[0].Value.ToString(), txtMaKH.Text, "NV001");
-                f7.ShowDialog();
-                dgv_LichSuGD.DataSource = action.get_DS_GiaoDich(txtMaSo.Text).Tables[0];
-            }
+                if (loaigiaodich == "GD_RLS")
+                {
+                    FormRutLaiSau f3 = new FormRutLaiSau(dgv_LichSuGD.Rows[r].Cells[0].Value.ToString(), txtMaKH.Text, manhanvien);
+                    f3.ShowDialog();
+                    dgv_LichSuGD.DataSource = action.get_DS_GiaoDich(txtMaSo.Text).Tables[0];
+                }
 
-            if (loaigiaodich == "GD_GH")
-            {
-                FormGiaHan f8 = new FormGiaHan(dgv_LichSuGD.Rows[r].Cells[0].Value.ToString());
-                f8.ShowDialog();
-            }
+                if (loaigiaodich == "GD_RLT")
+                {
+                    FormRutLaiTruoc f4 = new FormRutLaiTruoc(dgv_LichSuGD.Rows[r].Cells[0].Value.ToString(), txtMaKH.Text, manhanvien);
+                    f4.ShowDialog();
+                    dgv_LichSuGD.DataSource = action.get_DS_GiaoDich(txtMaSo.Text).Tables[0];
+                }
 
-            if (loaigiaodich == "GD_GG")
-            {
-                FormGuiGop f9 = new FormGuiGop(dgv_LichSuGD.Rows[r].Cells[0].Value.ToString(), "NV001", txtMaKH.Text);
-                f9.ShowDialog();
+                if (loaigiaodich == "GD_RLTH")
+                {
+                    FormRutLaiTruocHan f5 = new FormRutLaiTruocHan(dgv_LichSuGD.Rows[r].Cells[0].Value.ToString(), txtMaKH.Text, manhanvien);
+                    f5.ShowDialog();
+                    dgv_LichSuGD.DataSource = action.get_DS_GiaoDich(txtMaSo.Text).Tables[0];
+                }
+
+                if (loaigiaodich == "GD_TTTH")
+                {
+                    if (txtHinhThucGui.Text != "Gửi góp")
+                    {
+                        FormTatToanTruocHan f6 = new FormTatToanTruocHan(dgv_LichSuGD.Rows[r].Cells[0].Value.ToString(), txtMaKH.Text, manhanvien);
+                        f6.ShowDialog();
+                    }
+                    else
+                    {
+                        FormTatToanTruocHan f6 = new FormTatToanTruocHan(dgv_LichSuGD.Rows[r].Cells[0].Value.ToString(), txtMaKH.Text, manhanvien, true);
+                        f6.ShowDialog();
+                    }
+
+                    dgv_LichSuGD.DataSource = action.get_DS_GiaoDich(txtMaSo.Text).Tables[0];
+                }
+
+                if (loaigiaodich == "GD_TTDH")
+                {
+                    FormTatToanDungHan f7 = new FormTatToanDungHan(dgv_LichSuGD.Rows[r].Cells[0].Value.ToString(), txtMaKH.Text, manhanvien);
+                    f7.ShowDialog();
+                    dgv_LichSuGD.DataSource = action.get_DS_GiaoDich(txtMaSo.Text).Tables[0];
+                }
+
+                if (loaigiaodich == "GD_GH")
+                {
+                    FormGiaHan f8 = new FormGiaHan(dgv_LichSuGD.Rows[r].Cells[0].Value.ToString());
+                    f8.ShowDialog();
+                }
+
+                if (loaigiaodich == "GD_GG")
+                {
+                    FormGuiGop f9 = new FormGuiGop(dgv_LichSuGD.Rows[r].Cells[0].Value.ToString(), manhanvien, txtMaKH.Text);
+                    f9.ShowDialog();
+                }
             }
         }
 
@@ -246,18 +253,18 @@ namespace Saving_Account_Management
                     if (DateTime.Compare(ngayDenHan, DateTime.Today)<0)
                     {
                         // Tất toán đúng hạn
-                        thuchien = action.TatToanSoCoHan(txtMaSo.Text, DateTime.Today.ToShortDateString(), "NV003", txtMaKH.Text ,ref err);
+                        thuchien = action.TatToanSoCoHan(txtMaSo.Text, DateTime.Today.ToShortDateString(), manhanvien, txtMaKH.Text ,ref err);
                     }
                     else
                     {
                         // Tất toán trước hạn
-                        thuchien = action.TatToanSoCoHan(txtMaSo.Text, DateTime.Today.ToShortDateString(), "NV003", txtMaKH.Text, ref err, false);
+                        thuchien = action.TatToanSoCoHan(txtMaSo.Text, DateTime.Today.ToShortDateString(), manhanvien, txtMaKH.Text, ref err, false);
                     }
                 }
                 else
                 {
                     // Sổ không kỳ hạn
-                    thuchien = action.TatToanSoKhongThoiHan(txtMaSo.Text, DateTime.Today.ToShortDateString(), "NV003", txtMaKH.Text, ref err);
+                    thuchien = action.TatToanSoKhongThoiHan(txtMaSo.Text, DateTime.Today.ToShortDateString(), manhanvien, txtMaKH.Text, ref err);
                 }
 
                 if (thuchien)
@@ -278,7 +285,7 @@ namespace Saving_Account_Management
             //if (DateTime.Compare(ngayGuiGop, DateTime.Today) <= 0)
             if (DateTime.Compare(ngayGuiGop, new DateTime(2022,12,7))<= 0)
             {
-                FormGuiGop f9 = new FormGuiGop("NV001", txtMaKH.Text, txtMaSo.Text, txtHoTen.Text, txtMaDN.Text, "Lê Thị Kim Lệ");
+                FormGuiGop f9 = new FormGuiGop(manhanvien, txtMaKH.Text, txtMaSo.Text, txtHoTen.Text, txtMaDN.Text, tennhanvien);
                 f9.ShowDialog();
             }
             else

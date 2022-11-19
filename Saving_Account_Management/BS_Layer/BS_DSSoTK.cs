@@ -10,10 +10,9 @@ namespace Saving_Account_Management.BS_Layer
     {
         DB_Connect db = null;
         string err;
-
         public BS_DSSoTK()
         {
-            db = db = AppSettingSingleton.getSetting().SQLConnection;
+            db = AppSettingSingleton.getSetting().SQLConnection;
         }
 
         public DataSet LayDanhSachSoTK()
@@ -25,41 +24,38 @@ namespace Saving_Account_Management.BS_Layer
         public DataSet LayDanhSachChuSoHuu(string maSoTK)
         {
             db.new_comm();
-            string sql = "select MaKhachHang, HoTen, MaDinhDanh from CHI_TIET_SO where MaSoTK = @MaSoTK";
+            string sql = "select MaKhachHang, HoTen, MaDinhDanh from DBO.CHI_TIET_SO() where MaSoTK = @MaSoTK";
             return db.ExecuteQueryDataSet(sql, CommandType.Text, new SqlParameter("@MaSoTK", maSoTK));
         }
 
         public DataSet TimKiemMaSoTK(string maSoTK)
         {
-            DB_Connect conn = new DB_Connect();
+            db.new_comm();
             string sql = "SELECT* FROM TAI_KHOAN_TIET_KIEM WHERE MaSoTK LIKE '%' + @MaSoTK+ '%'";
-            DataSet ds = conn.ExecuteQueryDataSet(sql, CommandType.Text, new SqlParameter("@MaSoTK", maSoTK));
+            DataSet ds = db.ExecuteQueryDataSet(sql, CommandType.Text, new SqlParameter("@MaSoTK", maSoTK));
             return ds;
         }
 
         public DataSet TimKiemSoHuu(string hoTen)
         {
-            DB_Connect conn = new DB_Connect();
+            db.new_comm();
             string sql = "select * from TIM_KIEM_SO_HUU(@HoTen)";
-            DataSet ds = conn.ExecuteQueryDataSet(sql, CommandType.Text, new SqlParameter("@HoTen", hoTen));
+            DataSet ds = db.ExecuteQueryDataSet(sql, CommandType.Text, new SqlParameter("@HoTen", hoTen));
             return ds;
         }
 
         public DataSet TenHinhThucTK()
         {
-            DB_Connect conn = new DB_Connect();
             string sql = "select * from TenHinhThuc";
-            DataSet ds = conn.ExecuteQueryDataSet(sql, CommandType.Text);
+            DataSet ds = db.ExecuteQueryDataSet(sql, CommandType.Text);
             return ds;
         }
 
         public DataSet TimKiemTheoHinhThucTK(string tenHinhThuc)
         {
-            DB_Connect conn = new DB_Connect();
             string sql = "select * from TAI_KHOAN_TIET_KIEM RIGHT join " + tenHinhThuc
                        + " on TAI_KHOAN_TIET_KIEM.MaSoTK = " + tenHinhThuc + ".MaSoTK";
-
-            DataSet ds = conn.ExecuteQueryDataSet(sql, CommandType.Text);
+            DataSet ds = db.ExecuteQueryDataSet(sql, CommandType.Text);
             return ds;
         }
 
@@ -83,7 +79,7 @@ namespace Saving_Account_Management.BS_Layer
 
         public bool ThemNguoiDongSoHuu(string maSoTK , DateTime ngayPhatSinhGiaoDich , string maNhanVien ,
                                  string hoTen, DateTime ngaySinh, string sdt,string maDinhDanh,
-                                 DateTime ngayCap, string noiCap, string diaChi, string image)
+                                 DateTime ngayCap, string noiCap, string diaChi, string image, ref string error)
         {
             string sqlString = "DongSoHuu";
             db.new_comm();
@@ -98,7 +94,7 @@ namespace Saving_Account_Management.BS_Layer
             db.comm.Parameters.Add("@noiCap", SqlDbType.NVarChar).Value = noiCap;
             db.comm.Parameters.Add("@diaChi", SqlDbType.NVarChar).Value = diaChi;
             db.comm.Parameters.Add("@imageFolderPath", SqlDbType.NVarChar).Value = image;
-            return db.MyExecuteNonQuery(sqlString, CommandType.StoredProcedure, ref err);
+            return db.MyExecuteNonQuery(sqlString, CommandType.StoredProcedure, ref error);
 
 
            

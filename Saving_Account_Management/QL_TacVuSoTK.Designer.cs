@@ -105,7 +105,7 @@ namespace Saving_Account_Management
             this.label2.BackColor = System.Drawing.Color.LightSteelBlue;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Purple;
-            this.label2.Location = new System.Drawing.Point(795, 502);
+            this.label2.Location = new System.Drawing.Point(318, -4);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(358, 38);
             this.label2.TabIndex = 32;
@@ -135,7 +135,7 @@ namespace Saving_Account_Management
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(47, 95);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(439, 33);
+            this.label1.Size = new System.Drawing.Size(469, 34);
             this.label1.TabIndex = 31;
             this.label1.Text = "Tìm kiếm khách hàng theo mã định danh";
             // 
@@ -168,9 +168,9 @@ namespace Saving_Account_Management
             this.label21.BackColor = System.Drawing.Color.PeachPuff;
             this.label21.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label21.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(47, 34);
+            this.label21.Location = new System.Drawing.Point(47, 47);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(360, 33);
+            this.label21.Size = new System.Drawing.Size(376, 34);
             this.label21.TabIndex = 28;
             this.label21.Text = "Tìm kiếm sổ tiết kiệm theo mã sổ";
             // 
@@ -406,7 +406,7 @@ namespace Saving_Account_Management
             // 
             // txt_TKMaSo
             // 
-            this.txt_TKMaSo.Location = new System.Drawing.Point(544, 37);
+            this.txt_TKMaSo.Location = new System.Drawing.Point(544, 51);
             this.txt_TKMaSo.Name = "txt_TKMaSo";
             this.txt_TKMaSo.Size = new System.Drawing.Size(232, 30);
             this.txt_TKMaSo.TabIndex = 20;
@@ -481,6 +481,7 @@ namespace Saving_Account_Management
             // txt_MaDinhDanh
             // 
             this.txt_MaDinhDanh.Location = new System.Drawing.Point(611, 83);
+            this.txt_MaDinhDanh.MaxLength = 12;
             this.txt_MaDinhDanh.Name = "txt_MaDinhDanh";
             this.txt_MaDinhDanh.Size = new System.Drawing.Size(232, 34);
             this.txt_MaDinhDanh.TabIndex = 5;
@@ -489,6 +490,7 @@ namespace Saving_Account_Management
             // txt_Sdt
             // 
             this.txt_Sdt.Location = new System.Drawing.Point(188, 271);
+            this.txt_Sdt.MaxLength = 10;
             this.txt_Sdt.Name = "txt_Sdt";
             this.txt_Sdt.Size = new System.Drawing.Size(211, 34);
             this.txt_Sdt.TabIndex = 3;

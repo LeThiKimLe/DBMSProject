@@ -88,8 +88,7 @@ namespace Saving_Account_Management
             BS_DSNhanVien b1 = new BS_DSNhanVien();
             maNV_tb.Text = b1.get_MaNV();
             Hienchinhanh();
-            
-
+            HienChucVu();
         }
         void Hienchinhanh()
         {
@@ -109,6 +108,13 @@ namespace Saving_Account_Management
 
         }
 
+        void HienChucVu()
+        {
+            BS_DSNhanVien b1 = new BS_DSNhanVien();
+            cbbChucVu.DataSource = b1.get_ChucVu().Tables[0];
+            cbbChucVu.DisplayMember = "TenNhom";
+            cbbChucVu.ValueMember = "MaNhomNguoiDung";
+        }
 
         private void dataGridView_NV_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -128,6 +134,8 @@ namespace Saving_Account_Management
                 this.comboBox_machinhanh.Text = dataGridView_NV.Rows[r].Cells[6].Value.ToString();
                 this.cmndNV_tb.Text = dataGridView_NV.Rows[r].Cells[1].Value.ToString();
                 this.dateTimePicker_ngaysinh.Value= Convert.ToDateTime(dataGridView_NV.Rows[r].Cells[3].Value.ToString());
+                this.comboBox_machinhanh.Text = dataGridView_NV.Rows[r].Cells[6].Value.ToString();
+                this.cbbChucVu.Text = dataGridView_NV.Rows[r].Cells[7].Value.ToString();
 
             }
             // Không cho thao tác trên các nút Lưu / Hủy 
@@ -173,15 +181,15 @@ namespace Saving_Account_Management
                 {
                     // Thực hiện lệnh 
                     BS_DSNhanVien dssv = new BS_DSNhanVien();
-                    dssv.ThemNhanVien(this.tenNV_tb.Text,this.dateTimePicker_ngaysinh.Value.ToString(),cmndNV_tb.Text,sdtNV_tb.Text,comboBox_machinhanh.SelectedValue.ToString(),ref err);
+                    dssv.ThemNhanVien(this.tenNV_tb.Text,this.dateTimePicker_ngaysinh.Value.ToString(),cmndNV_tb.Text,sdtNV_tb.Text,comboBox_machinhanh.SelectedValue.ToString(),cbbChucVu.SelectedValue.ToString(),ref err);
                     // Load lại dữ liệu trên DataGridView 
                     LoadData();
                     // Thông báo 
                     MessageBox.Show("Đã thêm nhân viên thành công!","Thông Báo",MessageBoxButtons.OK,MessageBoxIcon.Information);
                 }
-                catch (SqlException)
+                catch (SqlException err)
                 {
-                    MessageBox.Show("Không thêm được. Lỗi rồi!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Không thêm được. Lỗi rồi!\n"+ err.Message, "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else
@@ -239,7 +247,6 @@ namespace Saving_Account_Management
             this.save_btn.Enabled = false;
             this.button_huy.Enabled = false;
             this.panel1.Enabled = false;
-
         }
 
         private void button_timkiem_Click(object sender, EventArgs e)
@@ -250,6 +257,25 @@ namespace Saving_Account_Management
             dataGridView_NV.DataSource = dt;
             // Thay đổi độ rộng cột 
             dataGridView_NV.AutoResizeColumns();
+        }
+
+        private void DeleteNV_btn_Click(object sender, EventArgs e)
+        {
+            string err = null;
+            DialogResult xacnhanXoa = MessageBox.Show("Chắc chắn xóa nhân viên này?", "Xác nhận", MessageBoxButtons.YesNo);
+            if (xacnhanXoa == DialogResult.Yes)
+            {
+                bool thuchien=dssv.XoaNhanVien(this.maNV_tb.Text, ref err);
+                if (thuchien)
+                {
+                    MessageBox.Show("Xóa thành công nhân viên", "Đã thực hiện");
+                    LoadData();
+                }
+                else
+                {
+                    MessageBox.Show("Xóa thất bại\n" + err, "Lỗi");
+                }
+            }
         }
     }
 }

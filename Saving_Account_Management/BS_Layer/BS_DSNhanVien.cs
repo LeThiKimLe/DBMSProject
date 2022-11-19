@@ -51,39 +51,50 @@ namespace Saving_Account_Management.BS_Layer
             DataSet dts = db.ExecuteQueryDataSet(sqlString, CommandType.Text);
             return dts;
         }
-        public bool ThemNhanVien(string hoten,string ngaysinh,string madinhdanh,string sdt, string machinhanh, ref string err)
-        { 
 
+        public DataSet get_ChucVu()
+        {
+            string sqlString = "SELECT * FROM NHOM_NGUOI_DUNG";
+            db.new_comm();
+            DataSet dts = db.ExecuteQueryDataSet(sqlString, CommandType.Text);
+            return dts;
+        }
+
+
+
+        public bool ThemNhanVien(string hoten,string ngaysinh,string madinhdanh,string sdt, string machinhanh, string maNhom ,ref string err)
+        { 
             string sqlString = "ThemNhanVien";
             db.new_comm();
-
             db.comm.Parameters.Add("@hoTen", SqlDbType.NVarChar).Value = hoten;
-         
             db.comm.Parameters.Add("@ngaySinh", SqlDbType.Date).Value = DateTime.Parse(ngaysinh);
             db.comm.Parameters.Add("@SDT", SqlDbType.VarChar).Value = sdt;
             db.comm.Parameters.Add("@maDinhDanh", SqlDbType.VarChar).Value = madinhdanh;
             db.comm.Parameters.Add("@maChiNhanh", SqlDbType.VarChar).Value = machinhanh;
-          return db.MyExecuteNonQuery(sqlString, CommandType.StoredProcedure, ref err);
-
-
+            db.comm.Parameters.Add("@maNhom", SqlDbType.VarChar).Value = maNhom;
+            return db.MyExecuteNonQuery(sqlString, CommandType.StoredProcedure, ref err);
         }
         public bool SuaNhanVien(string MaNV,string hoten, string ngaysinh, string madinhdanh, string sdt, string machinhanh, ref string err)
         {
-
             string sqlString = "SuaNhanVien";
             db.new_comm();
-
             db.comm.Parameters.Add("@maNV", SqlDbType.VarChar).Value = MaNV;
             db.comm.Parameters.Add("@hoTen", SqlDbType.NVarChar).Value = hoten;
-
             db.comm.Parameters.Add("@ngaySinh", SqlDbType.Date).Value = DateTime.Parse(ngaysinh);
             db.comm.Parameters.Add("@SDT", SqlDbType.VarChar).Value = sdt;
             db.comm.Parameters.Add("@maDinhDanh", SqlDbType.VarChar).Value = madinhdanh;
             db.comm.Parameters.Add("@maChiNhanh", SqlDbType.VarChar).Value = machinhanh;
             return db.MyExecuteNonQuery(sqlString, CommandType.StoredProcedure, ref err);
-
-
         }
+
+        public bool XoaNhanVien(string MaNV, ref string err)
+        {
+            string sqlString = "DELETE FROM NHAN_VIEN WHERE MaNhanVien='"+ MaNV+"'";
+            db.new_comm();
+            return db.MyExecuteNonQuery(sqlString, CommandType.Text, ref err);
+        }
+
+
 
     }
 }

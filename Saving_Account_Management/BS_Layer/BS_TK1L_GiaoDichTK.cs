@@ -252,10 +252,5 @@ namespace Saving_Account_Management.BS_Layer
             db.comm.Parameters.Add("@maKhachHang", SqlDbType.VarChar).Value = maKhachHang;
             return db.MyExecuteNonQuery(sqlString, CommandType.StoredProcedure, ref err);
         }
-
-
-
-
-
     }
 }
